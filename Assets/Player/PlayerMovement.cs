@@ -6,11 +6,26 @@ using UnityEngine;
 public class PlayerController : NetworkBehaviour
 {
     [Header("Movement Settings")]
-    [SerializeField] private float moveSpeed = 5f;
-    [SerializeField] private float sprintSpeed = 8f;
+    [SerializeField] private float moveSpeed = 10f;
+    //[SerializeField] private float sprintSpeed = 10f;
     [SerializeField] private float jumpForce = 1f;
     [SerializeField] private float gravity = -9.81f;
     [SerializeField] private float groundCheckDistance = 0.2f;
+
+    [Header("Dash Settings")]
+    [SerializeField] private float dashDuration = 0.15f;
+    [SerializeField] private float dashDistance = 5f;
+    [SerializeField] private float dashCooldown = 1f;
+    private float lastDashTime;
+    private float dashTimer;
+    private Vector3 dashVelocity;
+
+    [Header("Crouch Settings")]
+    [SerializeField] private float crouchHeight = 0.7f;
+    [SerializeField] private float standHeight = 1.5f;
+    [SerializeField] private float crouchSpeed = 4f;
+    [SerializeField] private float crouchTransitionSpeed = 10f;
+    private SyncVar<bool> isCrouching = new(false);
 
     [Header("Look Settings")]
     [SerializeField] private float lookSensitivity = 2f;
@@ -18,6 +33,7 @@ public class PlayerController : NetworkBehaviour
 
     [Header("References")]
     [SerializeField] private Camera playerCamera;
+    [SerializeField] private Transform weaponHolder;
     
     private CharacterController characterController;
     private Vector3 velocity;
@@ -72,12 +88,28 @@ public class PlayerController : NetworkBehaviour
         Vector3 moveDirection = transform.right * horizontal + transform.forward * vertical;
         moveDirection = Vector3.ClampMagnitude(moveDirection, 1f);
 
-        float currentSpeed = Input.GetKey(KeyCode.LeftShift) ? sprintSpeed : moveSpeed;
+        //float currentSpeed = Input.GetKey(KeyCode.LeftShift) ? sprintSpeed : moveSpeed;
+        float currentSpeed = isCrouching ? crouchSpeed : moveSpeed;
         characterController.Move(moveDirection * currentSpeed * Time.deltaTime);
 
+        //jump
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             velocity.y = Mathf.Sqrt(jumpForce * -2f * gravity);
+        }
+        //crouch
+        if(Input.GetKey(KeyCode.LeftControl)){isCrouching.value=true;}
+        else{isCrouching.value = false;}
+        HandleCrouch();
+        //dash
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            Dash();
+        }
+        if (dashTimer > 0)
+        {
+            characterController.Move(dashVelocity * Time.deltaTime);
+            dashTimer -= Time.deltaTime;
         }
 
         velocity.y += gravity * Time.deltaTime;
@@ -99,6 +131,53 @@ public class PlayerController : NetworkBehaviour
     private bool IsGrounded()
     {
         return Physics.Raycast(transform.position + Vector3.up * 0.03f, Vector3.down, groundCheckDistance);
+    }
+
+    private void Dash()
+    {
+        if(Time.time < lastDashTime + dashCooldown)
+            return;
+
+        lastDashTime = Time.time;
+
+        Vector3 dashDirection = transform.forward;
+        dashDirection.y = 0f;
+        dashDirection.Normalize();
+
+        dashVelocity = dashDirection * (dashDistance / dashDuration);
+        dashTimer = dashDuration;
+    }
+
+    private void HandleCrouch()
+    {
+        float targetHeight = isCrouching.value ? crouchHeight : standHeight;
+
+        characterController.height = Mathf.Lerp(
+            characterController.height,
+            targetHeight,
+            Time.deltaTime * crouchTransitionSpeed
+        );
+
+        //player center
+        characterController.center = new Vector3(
+            0,
+            characterController.height / 2f,
+            0
+        );
+
+        //cam height
+        playerCamera.transform.localPosition = new Vector3(
+            playerCamera.transform.localPosition.x,
+            characterController.height - 0.2f,
+            playerCamera.transform.localPosition.z
+        );
+
+        //weaponholder height
+        weaponHolder.localPosition = new Vector3(
+            weaponHolder.localPosition.x,
+            characterController.height - 1.8f,
+            weaponHolder.localPosition.z
+        );
     }
 
 #if UNITY_EDITOR

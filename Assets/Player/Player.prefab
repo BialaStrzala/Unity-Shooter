@@ -204,7 +204,7 @@ Transform:
   m_GameObject: {fileID: 5649783980467732398}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.231, y: -0.45334005, z: 0.638}
+  m_LocalPosition: {x: 0.231, y: -0.45334005, z: 0.757}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -273,13 +273,20 @@ MonoBehaviour:
   _networkRules: {fileID: 0}
   _visitiblityRules: {fileID: 0}
   moveSpeed: 5
-  sprintSpeed: 8
   jumpForce: 1
   gravity: -9.81
   groundCheckDistance: 0.2
+  dashDuration: 0.15
+  dashDistance: 5
+  dashCooldown: 1
+  crouchHeight: 0.7
+  standHeight: 1.5
+  crouchSpeed: 4
+  crouchTransitionSpeed: 10
   lookSensitivity: 2
   maxLookAngle: 80
   playerCamera: {fileID: 1727965345486233359}
+  weaponHolder: {fileID: 7461903698999656236}
 --- !u!143 &1398300583740477151
 CharacterController:
   m_ObjectHideFlags: 0
@@ -389,6 +396,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 10a565264c4bbd14f9a57fcdfe625e57, type: 2}
   - {fileID: 11400000, guid: 15f3e54d32844c04ea90dceb5f2521de, type: 2}
   cameraTransform: {fileID: 3509563198595993954}
+  activeWeaponIndex:
+    _value: 0
+    _ownerAuth: 1
+    _sendIntervalInSeconds: 0
 --- !u!1 &8869110940787794979
 GameObject:
   m_ObjectHideFlags: 0
@@ -486,21 +497,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7461903698999656236}
     m_Modifications:
+    - target: {fileID: 817388629978668719, guid: df956e004c574bb4cb06c2d94bfd79be, type: 3}
+      propertyPath: cameraTransform
+      value: 
+      objectReference: {fileID: 3509563198595993954}
     - target: {fileID: 3344912294720958483, guid: df956e004c574bb4cb06c2d94bfd79be, type: 3}
       propertyPath: m_Name
       value: RiflePrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 3344912294720958483, guid: df956e004c574bb4cb06c2d94bfd79be, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3806911546251652034, guid: df956e004c574bb4cb06c2d94bfd79be, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.49605
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3806911546251652034, guid: df956e004c574bb4cb06c2d94bfd79be, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.32065994
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3806911546251652034, guid: df956e004c574bb4cb06c2d94bfd79be, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.07511002
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3806911546251652034, guid: df956e004c574bb4cb06c2d94bfd79be, type: 3}
       propertyPath: m_LocalRotation.w
@@ -552,17 +571,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: PistolPrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 1829057068892873038, guid: 860a5a8d653ff5646bfbeb8ea1cc2fcc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4728473866037889234, guid: 860a5a8d653ff5646bfbeb8ea1cc2fcc, type: 3}
+      propertyPath: cameraTransform
+      value: 
+      objectReference: {fileID: 3509563198595993954}
     - target: {fileID: 9190677834844770388, guid: 860a5a8d653ff5646bfbeb8ea1cc2fcc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.49605
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9190677834844770388, guid: 860a5a8d653ff5646bfbeb8ea1cc2fcc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.298
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9190677834844770388, guid: 860a5a8d653ff5646bfbeb8ea1cc2fcc, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.07511002
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9190677834844770388, guid: 860a5a8d653ff5646bfbeb8ea1cc2fcc, type: 3}
       propertyPath: m_LocalRotation.w

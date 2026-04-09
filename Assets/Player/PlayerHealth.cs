@@ -13,6 +13,17 @@ public class PlayerHealth : NetworkBehaviour
         base.OnSpawned();
         var actualLayer = isOwner ? selfLayer : otherLayer;
         SetLayerResursive(gameObject, actualLayer);
+
+        if (isOwner)
+        {
+            health.onChanged += OnHealthChanged;
+        }
+    }
+
+    protected override void OnDestroy()
+    {
+        base.OnDestroy();
+        health.onChanged -= OnHealthChanged;
     }
 
     private void SetLayerResursive(GameObject obj, int layer)
@@ -29,5 +40,14 @@ public class PlayerHealth : NetworkBehaviour
     { 
         health.value += amount; 
         Debug.Log($"Changed health: {health}/100");
-    } 
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnHealthChanged(int newHealth)
+    {
+        InstanceHandler.GetInstance<MainGameView>().UpdateHealth(newHealth);
+    }
 }
