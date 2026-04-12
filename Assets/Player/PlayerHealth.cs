@@ -1,11 +1,12 @@
 using UnityEngine;
 using PurrNet;
+using System;
 
 public class PlayerHealth : NetworkBehaviour
 {
     [SerializeField] private SyncVar<int> health = new(100);
     [SerializeField] private int selfLayer, otherLayer;
-
+    public Action<PlayerID> OnDeath_Server;
     public int GetHealth => health.value;
 
     protected override void OnSpawned()
@@ -16,6 +17,7 @@ public class PlayerHealth : NetworkBehaviour
 
         if (isOwner)
         {
+            InstanceHandler.GetInstance<MainGameView>().UpdateHealth(health.value);
             health.onChanged += OnHealthChanged;
         }
     }
@@ -42,6 +44,7 @@ public class PlayerHealth : NetworkBehaviour
         Debug.Log($"Changed health: {health}/100");
         if (health <= 0)
         {
+            OnDeath_Server?.Invoke(owner.Value);
             Destroy(gameObject);
         }
     }

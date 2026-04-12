@@ -13,8 +13,10 @@ public class PlayerWeapon : NetworkBehaviour
         base.OnSpawned();
         activeWeaponIndex.onChanged += OnWeaponChanged;
         OnWeaponChanged(activeWeaponIndex.value);
-        //EquipWeapon(0);
+        EquipWeapon(0);
+        gameObject.name = isOwner ? "PLAYER_LOCAL" : "PLAYER_REMOTE";
     }
+
     protected override void OnDestroy()
     {
         base.OnDestroy();
@@ -22,8 +24,6 @@ public class PlayerWeapon : NetworkBehaviour
     }
     private void Update()
     {
-        //po dodaniu ui bronie nie naleza do playera ???
-        //Debug.Log(isOwner);
         if(!isOwner){return;}
         //temp
         if(Input.GetKeyDown(KeyCode.Alpha1)) {
@@ -35,14 +35,6 @@ public class PlayerWeapon : NetworkBehaviour
     private void EquipWeapon(int index)
     {
         activeWeaponIndex.value = index;
-        /* activeWeaponIndex.value = index;
-        for(int i=0; i<weaponHolder.childCount; i++)
-        {
-            var weaponObj = weaponHolder.GetChild(i).gameObject;
-            weaponObj.SetActive(i==index);
-            //Debug.Log($"Weapon {i} ? = {i==index}");
-        }
-        Debug.Log($"=== Weapon {activeWeaponIndex.value} equipped ==="); */
     }
 
     private void OnWeaponChanged(int newValue)

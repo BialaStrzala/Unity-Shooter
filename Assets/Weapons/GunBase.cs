@@ -28,14 +28,14 @@ public class GunBase : NetworkBehaviour
     {
         //has weapon equipped
         if(!data){return;}
-        Debug.Log($"Shot fired from {data.weaponName}");
+        //Debug.Log($"Shot fired from {data.weaponName}");
         //cooldown
         if(Time.time < nextFireTime){return;}
         nextFireTime = Time.time + data.fireRate;
         //didn't hit anything
         if(!Physics.Raycast(cameraTransform.position, cameraTransform.forward,out var hit, data.range, hitLayer))
         {
-            Debug.Log("Nothing hit");
+            //Debug.Log("Nothing hit");
             return;
         }
         //if hit player
@@ -44,6 +44,6 @@ public class GunBase : NetworkBehaviour
             Debug.Log($"Hit player!!! With: {data.weaponName}, for dmg: -{data.damage}");
             health.ChangeHealth(-data.damage);
         }
-        Debug.Log($"Hit: {hit.transform.name}");
+        //Debug.Log($"Hit: {hit.transform.name}");
     }
 }
