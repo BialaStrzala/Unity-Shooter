@@ -405,6 +405,7 @@
 -r:"Library/PackageCache/com.unity.visualscripting@6279e2b7c485/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll"
 -r:"Library/PackageCache/dev.purrnet.purrnet@f4dd26fb792b/Externals/7zip/K4os.Compression.LZ4.dll"
 -r:"Library/PackageCache/dev.purrnet.purrnet@f4dd26fb792b/Externals/7zip/System.Runtime.CompilerServices.Unsafe.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.RenderPipelines.Core.Runtime.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.TextMeshPro.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.TestRunner.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"

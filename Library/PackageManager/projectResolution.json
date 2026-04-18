@@ -48,6 +48,16 @@
       "source": "builtin",
       "testable": false
     },
+    "com.unity.shadergraph@17.2.0": {
+      "name": "com.unity.shadergraph",
+      "displayName": "Shader Graph",
+      "resolvedPath": "C:\\Users\\paula\\Desktop\\Code\\Unity Projects\\Unity-Shooter\\Library\\PackageCache\\com.unity.shadergraph@41211273cdd1",
+      "fingerprint": "41211273cdd1ec56cc330555ecc5be38b9ea2055",
+      "editorCompatibility": "6000.2.0a1",
+      "version": "17.2.0",
+      "source": "builtin",
+      "testable": false
+    },
     "com.unity.timeline@1.8.9": {
       "name": "com.unity.timeline",
       "displayName": "Timeline",
@@ -389,6 +399,26 @@
       "source": "registry",
       "testable": false
     },
+    "com.unity.render-pipelines.core@17.2.0": {
+      "name": "com.unity.render-pipelines.core",
+      "displayName": "Scriptable Render Pipeline Core",
+      "resolvedPath": "C:\\Users\\paula\\Desktop\\Code\\Unity Projects\\Unity-Shooter\\Library\\PackageCache\\com.unity.render-pipelines.core@67f868dbad82",
+      "fingerprint": "67f868dbad82414b67a47161bdeffad5498e1cc0",
+      "editorCompatibility": "6000.2.0a1",
+      "version": "17.2.0",
+      "source": "builtin",
+      "testable": false
+    },
+    "com.unity.searcher@4.9.3": {
+      "name": "com.unity.searcher",
+      "displayName": "Searcher",
+      "resolvedPath": "C:\\Users\\paula\\Desktop\\Code\\Unity Projects\\Unity-Shooter\\Library\\PackageCache\\com.unity.searcher@1e17ce91558d",
+      "fingerprint": "1e17ce91558d1d9127554adc03d275f39a7466a2",
+      "editorCompatibility": "2019.1.0a1",
+      "version": "4.9.3",
+      "source": "registry",
+      "testable": false
+    },
     "com.unity.ide.visualstudio@2.0.23": {
       "name": "com.unity.ide.visualstudio",
       "displayName": "Visual Studio Editor",
@@ -477,6 +507,16 @@
       "editorCompatibility": "2020.3.0a1",
       "version": "3.2.0",
       "source": "registry",
+      "testable": false
+    },
+    "com.unity.rendering.light-transport@1.0.1": {
+      "name": "com.unity.rendering.light-transport",
+      "displayName": "Unity Light Transport Library",
+      "resolvedPath": "C:\\Users\\paula\\Desktop\\Code\\Unity Projects\\Unity-Shooter\\Library\\PackageCache\\com.unity.rendering.light-transport@2c9279f90d7c",
+      "fingerprint": "2c9279f90d7c8dfb6e76e3f90b6b3be1cafabfbc",
+      "editorCompatibility": "2023.3.0b1",
+      "version": "1.0.1",
+      "source": "builtin",
       "testable": false
     },
     "com.unity.settings-manager@2.1.0": {

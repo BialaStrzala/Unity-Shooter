@@ -25,7 +25,12 @@ public class PlayerController : NetworkBehaviour
     [SerializeField] private float standHeight = 1.5f;
     [SerializeField] private float crouchSpeed = 4f;
     [SerializeField] private float crouchTransitionSpeed = 10f;
-    private SyncVar<bool> isCrouching = new(false);
+    //private SyncVar<bool> isCrouching = new(false);
+    private bool isCrouching = false;
+
+    //Movement mechanics
+    private Vector3 externalVelocity;
+    private float boostTimer;
 
     [Header("Look Settings")]
     [SerializeField] private float lookSensitivity = 2f;
@@ -34,6 +39,7 @@ public class PlayerController : NetworkBehaviour
     [Header("References")]
     [SerializeField] private Camera playerCamera;
     [SerializeField] private Transform weaponHolder;
+    [SerializeField] private NetworkAnimator animator;
     
     private CharacterController characterController;
     private Vector3 velocity;
@@ -88,6 +94,14 @@ public class PlayerController : NetworkBehaviour
         Vector3 moveDirection = transform.right * horizontal + transform.forward * vertical;
         moveDirection = Vector3.ClampMagnitude(moveDirection, 1f);
 
+        //speed boost
+        if(boostTimer > 0)
+        {
+            characterController.Move(externalVelocity * Time.deltaTime);
+            externalVelocity = Vector3.Lerp(externalVelocity, Vector3.zero, 5f * Time.deltaTime);
+            boostTimer -= Time.deltaTime;
+        }
+
         //float currentSpeed = Input.GetKey(KeyCode.LeftShift) ? sprintSpeed : moveSpeed;
         float currentSpeed = isCrouching ? crouchSpeed : moveSpeed;
         characterController.Move(moveDirection * currentSpeed * Time.deltaTime);
@@ -98,8 +112,8 @@ public class PlayerController : NetworkBehaviour
             velocity.y = Mathf.Sqrt(jumpForce * -2f * gravity);
         }
         //crouch
-        if(Input.GetKey(KeyCode.LeftControl)){isCrouching.value=true;}
-        else{isCrouching.value = false;}
+        if(Input.GetKey(KeyCode.LeftControl)){isCrouching=true;}
+        else{isCrouching = false;}
         HandleCrouch();
         //dash
         if (Input.GetKeyDown(KeyCode.LeftShift))
@@ -114,6 +128,10 @@ public class PlayerController : NetworkBehaviour
 
         velocity.y += gravity * Time.deltaTime;
         characterController.Move(velocity * Time.deltaTime);
+
+        //Animations
+        animator.SetFloat("Forward", vertical);
+        animator.SetFloat("Sideways", horizontal);
     }
 
     private void HandleRotation()
@@ -150,7 +168,7 @@ public class PlayerController : NetworkBehaviour
 
     private void HandleCrouch()
     {
-        float targetHeight = isCrouching.value ? crouchHeight : standHeight;
+        float targetHeight = isCrouching ? crouchHeight : standHeight;
 
         characterController.height = Mathf.Lerp(
             characterController.height,
@@ -178,6 +196,12 @@ public class PlayerController : NetworkBehaviour
             characterController.height - 1.8f,
             weaponHolder.localPosition.z
         );
+    }
+
+    public void ApplyBoost(Vector3 force, float duration)
+    {
+        externalVelocity = force;
+        boostTimer = duration;
     }
 
 #if UNITY_EDITOR

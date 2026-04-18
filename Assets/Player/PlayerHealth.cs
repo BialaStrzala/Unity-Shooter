@@ -38,12 +38,18 @@ public class PlayerHealth : NetworkBehaviour
     }
     
     [ServerRpc(requireOwnership:false)]
-    public void ChangeHealth(int amount) 
+    public void ChangeHealth(int amount, RPCInfo info = default) 
     { 
         health.value += amount; 
         Debug.Log($"Changed health: {health}/100");
         if (health <= 0)
         {
+            if(InstanceHandler.TryGetInstance(out ScoreManager scoreManager))
+            {
+                scoreManager.AddKill(info.sender);
+                if(owner.HasValue)
+                    scoreManager.AddDeath(owner.Value);
+            }
             OnDeath_Server?.Invoke(owner.Value);
             Destroy(gameObject);
         }

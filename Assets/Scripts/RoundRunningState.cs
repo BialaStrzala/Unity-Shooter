@@ -3,6 +3,7 @@ using PurrNet.StateMachine;
 using System.Collections.Generic;
 using System.Data.Common;
 using PurrNet;
+using Unity.Mathematics;
 public class RoundRunningState : StateNode<List<PlayerHealth>>
 {
     private List<PlayerID> players = new();
@@ -25,18 +26,10 @@ public class RoundRunningState : StateNode<List<PlayerHealth>>
 
     private void OnPlayerDeath(PlayerID deadPlayer)
     {
-        //deadPlayer.OnDeath_Server -= OnPlayerDeath;
         players.Remove(deadPlayer);
         if(players.Count <= 1)
         {
-            if(players.Count == 1)
-            {
-                machine.Next(players[0]);
-            }
-            else
-            {
-                machine.Next();
-            }
+            machine.Next();
         }
     }
 }

@@ -3,34 +3,18 @@ using PurrNet.StateMachine;
 using System.Collections.Generic;
 using PurrNet;
 
-public class RoundEndState : StateNode<PlayerID>
+public class RoundEndState : StateNode
 {
     [SerializeField] private int numberOfRounds = 3;
     [SerializeField] private StateNode spawningState;
     private int roundCount = 0;
     private WaitForSeconds delay = new(3f);
-    private Dictionary<PlayerID, int> roundWins = new();
 
     public override void Enter(bool asServer)
     {
         base.Enter(asServer);
         if(!asServer){return;}
-        Debug.Log("Round ended with no winner");
-        CheckForGameEnd();
-    }
-
-    //override?
-    public override void Enter(PlayerID winner, bool asServer)
-    {
-        base.Enter(asServer);
-        if(!asServer){return;}
         
-        if(!roundWins.ContainsKey(winner))
-        {
-            roundWins.Add(winner, 0);
-        }
-        roundWins[winner]++;
-        Debug.Log($"{winner}");
         CheckForGameEnd();
     }
 
@@ -39,7 +23,7 @@ public class RoundEndState : StateNode<PlayerID>
         roundCount++;
         if(roundCount >= numberOfRounds)
         {
-            machine.Next(roundWins);
+            machine.Next();
             return;
         }
         StartCoroutine(DelayNextState());
