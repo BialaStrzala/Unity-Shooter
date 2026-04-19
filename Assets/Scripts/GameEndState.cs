@@ -9,8 +9,20 @@ public class GameEndState : StateNode
     public override void Enter(bool asServer)
     {
         base.Enter(asServer);
-        if(!asServer){return;}
+        //if(!asServer){return;}
+        if(!InstanceHandler.TryGetInstance(out ScoreManager scoreManager))
+        {
+            Debug.Log($"Failed to get ScoreManager");
+            return;
+        }
 
-        Debug.Log("Game has ended");
+        var winner = scoreManager.GetWinner();
+        if(winner == default)
+        {
+            Debug.Log("Game has ended with no winner");
+            return;
+        }
+
+        Debug.Log($"Game has ended with {winner} as the winner");
     }
 }

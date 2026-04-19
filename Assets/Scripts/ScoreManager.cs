@@ -1,5 +1,6 @@
 using UnityEngine;
 using PurrNet;
+using System.Collections.Generic;
 
 public class ScoreManager : NetworkBehaviour
 {
@@ -8,12 +9,20 @@ public class ScoreManager : NetworkBehaviour
     private void Awake()
     {
         InstanceHandler.RegisterInstance(this);
+        scores.onChanged += OnScoresChanged;
     }
 
     protected override void OnDestroy()
     {
         base.OnDestroy();
         InstanceHandler.UnregisterInstance<ScoreManager>();
+        scores.onChanged -= OnScoresChanged;
+    }
+
+    private void OnScoresChanged(SyncDictionaryChange<PlayerID, ScoreData> change)
+    {
+        if(InstanceHandler.TryGetInstance(out ScoreboardView scoreboardView))
+            scoreboardView.SetData(scores.ToDictionary());
     }
 
     public void AddKill(PlayerID playerID)
@@ -38,6 +47,21 @@ public class ScoreManager : NetworkBehaviour
         {
             scores.Add(playerID, new ScoreData());
         }
+    }
+
+    public PlayerID GetWinner()
+    {
+        PlayerID winner = default;
+        var highestKills = 0;
+        foreach(var score in scores)
+        {
+            if(score.Value.kills > highestKills)
+            {
+                highestKills = score.Value.kills;
+                winner = score.Key;
+            }
+        }
+        return winner;
     }
 
     public struct ScoreData

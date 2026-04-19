@@ -9,6 +9,16 @@
     "C:\\Program Files\\Unity\\Hub\\Editor\\6000.2.7f2\\Editor\\Data\\Resources\\PackageManager\\BuiltInPackages\\BuiltInPackagesCombined.sha1"
   ],
   "outputs": {
+    "com.unity.animation.rigging@1.3.1": {
+      "name": "com.unity.animation.rigging",
+      "displayName": "Animation Rigging",
+      "resolvedPath": "C:\\Users\\paula\\Desktop\\Code\\Unity Projects\\Unity-Shooter\\Library\\PackageCache\\com.unity.animation.rigging@e106d1f78228",
+      "fingerprint": "e106d1f782287ccbe9035a7dd1ade8a864263ee6",
+      "editorCompatibility": "2022.2.0a9",
+      "version": "1.3.1",
+      "source": "registry",
+      "testable": false
+    },
     "com.unity.collab-proxy@2.12.4": {
       "name": "com.unity.collab-proxy",
       "displayName": "Unity Version Control",

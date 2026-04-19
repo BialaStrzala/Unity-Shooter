@@ -27,7 +27,6 @@ public class PlayerWeapon : NetworkBehaviour
         if(!isOwner){return;}
         //temp
         if(Input.GetKeyDown(KeyCode.Alpha1)) {
-            Debug.Log("hello");
             EquipWeapon(0);}
         if(Input.GetKeyDown(KeyCode.Alpha2)) {EquipWeapon(1);}
     }

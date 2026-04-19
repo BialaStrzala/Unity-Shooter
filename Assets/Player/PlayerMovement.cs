@@ -37,6 +37,7 @@ public class PlayerController : NetworkBehaviour
     [SerializeField] private float maxLookAngle = 80f;
 
     [Header("References")]
+    [SerializeField] private GameObject playerBody;
     [SerializeField] private Camera playerCamera;
     [SerializeField] private Transform weaponHolder;
     [SerializeField] private NetworkAnimator animator;
@@ -59,6 +60,7 @@ public class PlayerController : NetworkBehaviour
         {
             Destroy(playerCamera.gameObject);
         }
+        //Destroy(playerBody);
     }
 
     private void Start()
@@ -112,9 +114,9 @@ public class PlayerController : NetworkBehaviour
             velocity.y = Mathf.Sqrt(jumpForce * -2f * gravity);
         }
         //crouch
-        if(Input.GetKey(KeyCode.LeftControl)){isCrouching=true;}
-        else{isCrouching = false;}
-        HandleCrouch();
+        //if(Input.GetKey(KeyCode.LeftControl)){isCrouching=true;}
+        //else{isCrouching = false;}
+        //HandleCrouch();
         //dash
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
