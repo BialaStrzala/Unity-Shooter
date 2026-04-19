@@ -60,7 +60,7 @@ public class PlayerController : NetworkBehaviour
         {
             Destroy(playerCamera.gameObject);
         }
-        //Destroy(playerBody);
+        playerBody.SetActive(!isOwner);
     }
 
     private void Start()
