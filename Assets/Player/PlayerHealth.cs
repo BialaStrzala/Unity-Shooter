@@ -58,5 +58,10 @@ public class PlayerHealth : NetworkBehaviour
     private void OnHealthChanged(int newHealth)
     {
         InstanceHandler.GetInstance<MainGameView>().UpdateHealth(newHealth);
+        //red flash for taking dmg here
+        if(newHealth < health.value)
+        {
+            //InstanceHandler.GetInstance<MainGameView>().PlayDamageEffect();
+        }
     }
 }

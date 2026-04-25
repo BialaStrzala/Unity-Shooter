@@ -10,6 +10,7 @@ public class SpeedBoostScript : MonoBehaviour
         var player = other.GetComponentInParent<PlayerController>();
         if (player != null)
         {
+            //Debug.Log("Applying speed boost");
             Vector3 direction = transform.forward;
             direction.y = 0f;
             direction.Normalize();

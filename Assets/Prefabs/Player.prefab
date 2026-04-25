@@ -67,6 +67,8 @@ MonoBehaviour:
   rightIKTarget: {fileID: 5579456335232134065}
   leftIKTarget: {fileID: 2120223513008369312}
   muzzleFlash: {fileID: 5802697842012774323}
+  environmentHitEffect: {fileID: 0}
+  playerHitEffect: {fileID: 0}
 --- !u!1 &1742563711945863833
 GameObject:
   m_ObjectHideFlags: 0
@@ -1258,6 +1260,8 @@ MonoBehaviour:
   rightIKTarget: {fileID: 5579456335232134065}
   leftIKTarget: {fileID: 2120223513008369312}
   muzzleFlash: {fileID: 9183756041262964565}
+  environmentHitEffect: {fileID: 923361415246287586, guid: 2d40fd90023957a4b9897584c9392368, type: 3}
+  playerHitEffect: {fileID: 5077819531597492689, guid: 53d3a294da189da45a667bf35a759f63, type: 3}
 --- !u!4 &1951740761214177543 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 847d603838aa33347a37d27ef6b2b187, type: 3}
