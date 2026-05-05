@@ -1,16 +1,13 @@
 # Unity Shooter
 
-## Autorzy projektu: Paula Grzebyk
+## Opis projektu
+To repozytorium stanowi hub do przechowywania semestralnego projektu zespołowego z przedmiotu „Gry Unity 3D” - trójwymiarowego shootera z elementami platformowymi w minimalistycznym stylu „Low-Poly”.
 
-## Współautorzy projektu: Mateusz Pluta, Tymofii Torpan
-
-### Liczba autorów: 3
-
-To repozytorium stanowi hub do przechowywania zmian semestralnego projektu z przedmiotu „Gry Unity 3D”, będącego koncepcją pełnoprawnego trójwymiarowego shootera z elementami platformowymi w minimalistycznym stylu „Low-Poly”. Projekt znajduje się obecnie w fazie rozwoju.
+Gra obsługuje dowolną ilość graczy. Po rozpoczęciu rundy gracze strzelają do siebie i unikają pocisków przeciwników (elementy platformowe). Ostatni żywy gracz wygrywa rundę, których w sumie jest 3.
 
 Netcoding projektu oparty jest na darmowej bibliotece PurrNet, która wspiera hosting lobby oraz tworzenie projektów wieloosobowych.
 
-Aktualny skład zespołu:
-Paula Grzebyk – warstwa kodowa
-Tymofii Torpan – "relacje społeczne", modelowanie
-Mateusz Pluta – tworzenie mapy do finalnej wersji projektu
+## Autorzy
+- Paula Grzebyk
+- Tymofii Torpan
+- Mateusz Pluta
