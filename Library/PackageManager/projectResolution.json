@@ -1,18 +1,18 @@
 {
   "context": {
-    "projectPath": "C:/Users/paula/Desktop/Code/Unity Projects/Unity-Shooter/Packages",
+    "projectPath": "C:/gitboob/Unity-Shooter/Packages",
     "unityVersion": "6000.2.7f2"
   },
   "inputs": [
-    "C:\\Users\\paula\\Desktop\\Code\\Unity Projects\\Unity-Shooter\\Packages\\manifest.json",
-    "C:\\Users\\paula\\Desktop\\Code\\Unity Projects\\Unity-Shooter\\Packages\\packages-lock.json",
+    "C:\\gitboob\\Unity-Shooter\\Packages\\manifest.json",
+    "C:\\gitboob\\Unity-Shooter\\Packages\\packages-lock.json",
     "C:\\Program Files\\Unity\\Hub\\Editor\\6000.2.7f2\\Editor\\Data\\Resources\\PackageManager\\BuiltInPackages\\BuiltInPackagesCombined.sha1"
   ],
   "outputs": {
     "com.unity.animation.rigging@1.3.1": {
       "name": "com.unity.animation.rigging",
       "displayName": "Animation Rigging",
-      "resolvedPath": "C:\\Users\\paula\\Desktop\\Code\\Unity Projects\\Unity-Shooter\\Library\\PackageCache\\com.unity.animation.rigging@e106d1f78228",
+      "resolvedPath": "C:\\gitboob\\Unity-Shooter\\Library\\PackageCache\\com.unity.animation.rigging@e106d1f78228",
       "fingerprint": "e106d1f782287ccbe9035a7dd1ade8a864263ee6",
       "editorCompatibility": "2022.2.0a9",
       "version": "1.3.1",
@@ -22,7 +22,7 @@
     "com.unity.collab-proxy@2.12.4": {
       "name": "com.unity.collab-proxy",
       "displayName": "Unity Version Control",
-      "resolvedPath": "C:\\Users\\paula\\Desktop\\Code\\Unity Projects\\Unity-Shooter\\Library\\PackageCache\\com.unity.collab-proxy@0b1559bcd34e",
+      "resolvedPath": "C:\\gitboob\\Unity-Shooter\\Library\\PackageCache\\com.unity.collab-proxy@0b1559bcd34e",
       "fingerprint": "0b1559bcd34e3fee21f770e54e68e58e80eae214",
       "editorCompatibility": "2021.3.0f1",
       "version": "2.12.4",
@@ -32,7 +32,7 @@
     "com.unity.feature.development@1.0.2": {
       "name": "com.unity.feature.development",
       "displayName": "Engineering",
-      "resolvedPath": "C:\\Users\\paula\\Desktop\\Code\\Unity Projects\\Unity-Shooter\\Library\\PackageCache\\com.unity.feature.development@767aadbc6eb7",
+      "resolvedPath": "C:\\gitboob\\Unity-Shooter\\Library\\PackageCache\\com.unity.feature.development@767aadbc6eb7",
       "fingerprint": "767aadbc6eb72681a4ca807c8fa248e0230a0cef",
       "version": "1.0.2",
       "source": "builtin",
@@ -41,7 +41,7 @@
     "com.unity.inputsystem@1.14.2": {
       "name": "com.unity.inputsystem",
       "displayName": "Input System",
-      "resolvedPath": "C:\\Users\\paula\\Desktop\\Code\\Unity Projects\\Unity-Shooter\\Library\\PackageCache\\com.unity.inputsystem@be6c4fd0abf5",
+      "resolvedPath": "C:\\gitboob\\Unity-Shooter\\Library\\PackageCache\\com.unity.inputsystem@be6c4fd0abf5",
       "fingerprint": "be6c4fd0abf5b9b45f956b97294032a67f3c2f4d",
       "editorCompatibility": "2021.3.0a1",
       "version": "1.14.2",
@@ -51,7 +51,7 @@
     "com.unity.multiplayer.center@1.0.0": {
       "name": "com.unity.multiplayer.center",
       "displayName": "Multiplayer Center",
-      "resolvedPath": "C:\\Users\\paula\\Desktop\\Code\\Unity Projects\\Unity-Shooter\\Library\\PackageCache\\com.unity.multiplayer.center@f3fb577b3546",
+      "resolvedPath": "C:\\gitboob\\Unity-Shooter\\Library\\PackageCache\\com.unity.multiplayer.center@f3fb577b3546",
       "fingerprint": "f3fb577b3546594b97b8cc34307cd621f60f1c73",
       "editorCompatibility": "6000.0.0a1",
       "version": "1.0.0",
@@ -61,7 +61,7 @@
     "com.unity.shadergraph@17.2.0": {
       "name": "com.unity.shadergraph",
       "displayName": "Shader Graph",
-      "resolvedPath": "C:\\Users\\paula\\Desktop\\Code\\Unity Projects\\Unity-Shooter\\Library\\PackageCache\\com.unity.shadergraph@41211273cdd1",
+      "resolvedPath": "C:\\gitboob\\Unity-Shooter\\Library\\PackageCache\\com.unity.shadergraph@41211273cdd1",
       "fingerprint": "41211273cdd1ec56cc330555ecc5be38b9ea2055",
       "editorCompatibility": "6000.2.0a1",
       "version": "17.2.0",
@@ -71,7 +71,7 @@
     "com.unity.timeline@1.8.9": {
       "name": "com.unity.timeline",
       "displayName": "Timeline",
-      "resolvedPath": "C:\\Users\\paula\\Desktop\\Code\\Unity Projects\\Unity-Shooter\\Library\\PackageCache\\com.unity.timeline@6b9e48457ddb",
+      "resolvedPath": "C:\\gitboob\\Unity-Shooter\\Library\\PackageCache\\com.unity.timeline@6b9e48457ddb",
       "fingerprint": "6b9e48457ddb4f64813d77fd77efc79a8f3102ae",
       "editorCompatibility": "2021.3.0a1",
       "version": "1.8.9",
@@ -81,7 +81,7 @@
     "com.unity.ugui@2.0.0": {
       "name": "com.unity.ugui",
       "displayName": "Unity UI",
-      "resolvedPath": "C:\\Users\\paula\\Desktop\\Code\\Unity Projects\\Unity-Shooter\\Library\\PackageCache\\com.unity.ugui@f250afc9b68d",
+      "resolvedPath": "C:\\gitboob\\Unity-Shooter\\Library\\PackageCache\\com.unity.ugui@f250afc9b68d",
       "fingerprint": "f250afc9b68ddb0d3ebf8e3274ec22b51a03153c",
       "editorCompatibility": "2019.2.0a1",
       "version": "2.0.0",
@@ -91,7 +91,7 @@
     "com.unity.visualscripting@1.9.7": {
       "name": "com.unity.visualscripting",
       "displayName": "Visual Scripting",
-      "resolvedPath": "C:\\Users\\paula\\Desktop\\Code\\Unity Projects\\Unity-Shooter\\Library\\PackageCache\\com.unity.visualscripting@6279e2b7c485",
+      "resolvedPath": "C:\\gitboob\\Unity-Shooter\\Library\\PackageCache\\com.unity.visualscripting@6279e2b7c485",
       "fingerprint": "6279e2b7c4858e56cca7f367cd38c49ef66778c9",
       "editorCompatibility": "2021.3.0a1",
       "version": "1.9.7",
@@ -101,7 +101,7 @@
     "dev.purrnet.purrnet@https://github.com/PurrNet/PurrNet.git?path=/Assets/PurrNet#release": {
       "name": "dev.purrnet.purrnet",
       "displayName": "PurrNet",
-      "resolvedPath": "C:\\Users\\paula\\Desktop\\Code\\Unity Projects\\Unity-Shooter\\Library\\PackageCache\\dev.purrnet.purrnet@f4dd26fb792b",
+      "resolvedPath": "C:\\gitboob\\Unity-Shooter\\Library\\PackageCache\\dev.purrnet.purrnet@f4dd26fb792b",
       "fingerprint": "f4dd26fb792b1ba01d50922cc0a3498892d330c5",
       "version": "1.19.1",
       "source": "git",
@@ -382,7 +382,7 @@
     "com.unity.nuget.mono-cecil@1.11.5": {
       "name": "com.unity.nuget.mono-cecil",
       "displayName": "Mono Cecil",
-      "resolvedPath": "C:\\Users\\paula\\Desktop\\Code\\Unity Projects\\Unity-Shooter\\Library\\PackageCache\\com.unity.nuget.mono-cecil@d78732e851eb",
+      "resolvedPath": "C:\\gitboob\\Unity-Shooter\\Library\\PackageCache\\com.unity.nuget.mono-cecil@d78732e851eb",
       "fingerprint": "d78732e851eb42273c8e4d97993d3a94b207e570",
       "editorCompatibility": "2019.4.0a1",
       "version": "1.11.5",
@@ -392,7 +392,7 @@
     "com.unity.nuget.newtonsoft-json@3.2.1": {
       "name": "com.unity.nuget.newtonsoft-json",
       "displayName": "Newtonsoft Json",
-      "resolvedPath": "C:\\Users\\paula\\Desktop\\Code\\Unity Projects\\Unity-Shooter\\Library\\PackageCache\\com.unity.nuget.newtonsoft-json@74deb55db2a0",
+      "resolvedPath": "C:\\gitboob\\Unity-Shooter\\Library\\PackageCache\\com.unity.nuget.newtonsoft-json@74deb55db2a0",
       "fingerprint": "74deb55db2a0c29ddfda576608bcb86abbd13ee6",
       "editorCompatibility": "2018.4.0a1",
       "version": "3.2.1",
@@ -402,7 +402,7 @@
     "com.unity.collections@2.6.2": {
       "name": "com.unity.collections",
       "displayName": "Collections",
-      "resolvedPath": "C:\\Users\\paula\\Desktop\\Code\\Unity Projects\\Unity-Shooter\\Library\\PackageCache\\com.unity.collections@aea9d3bd5e19",
+      "resolvedPath": "C:\\gitboob\\Unity-Shooter\\Library\\PackageCache\\com.unity.collections@aea9d3bd5e19",
       "fingerprint": "aea9d3bd5e19f2a90fc3a39919974a5f3613a159",
       "editorCompatibility": "2022.3.20f1",
       "version": "2.6.2",
@@ -412,7 +412,7 @@
     "com.unity.render-pipelines.core@17.2.0": {
       "name": "com.unity.render-pipelines.core",
       "displayName": "Scriptable Render Pipeline Core",
-      "resolvedPath": "C:\\Users\\paula\\Desktop\\Code\\Unity Projects\\Unity-Shooter\\Library\\PackageCache\\com.unity.render-pipelines.core@67f868dbad82",
+      "resolvedPath": "C:\\gitboob\\Unity-Shooter\\Library\\PackageCache\\com.unity.render-pipelines.core@67f868dbad82",
       "fingerprint": "67f868dbad82414b67a47161bdeffad5498e1cc0",
       "editorCompatibility": "6000.2.0a1",
       "version": "17.2.0",
@@ -422,7 +422,7 @@
     "com.unity.searcher@4.9.3": {
       "name": "com.unity.searcher",
       "displayName": "Searcher",
-      "resolvedPath": "C:\\Users\\paula\\Desktop\\Code\\Unity Projects\\Unity-Shooter\\Library\\PackageCache\\com.unity.searcher@1e17ce91558d",
+      "resolvedPath": "C:\\gitboob\\Unity-Shooter\\Library\\PackageCache\\com.unity.searcher@1e17ce91558d",
       "fingerprint": "1e17ce91558d1d9127554adc03d275f39a7466a2",
       "editorCompatibility": "2019.1.0a1",
       "version": "4.9.3",
@@ -432,7 +432,7 @@
     "com.unity.ide.visualstudio@2.0.23": {
       "name": "com.unity.ide.visualstudio",
       "displayName": "Visual Studio Editor",
-      "resolvedPath": "C:\\Users\\paula\\Desktop\\Code\\Unity Projects\\Unity-Shooter\\Library\\PackageCache\\com.unity.ide.visualstudio@198cdf337d13",
+      "resolvedPath": "C:\\gitboob\\Unity-Shooter\\Library\\PackageCache\\com.unity.ide.visualstudio@198cdf337d13",
       "fingerprint": "198cdf337d13c83ca953581515630d66b779e92b",
       "editorCompatibility": "2019.4.25f1",
       "version": "2.0.23",
@@ -442,7 +442,7 @@
     "com.unity.ide.rider@3.0.38": {
       "name": "com.unity.ide.rider",
       "displayName": "JetBrains Rider Editor",
-      "resolvedPath": "C:\\Users\\paula\\Desktop\\Code\\Unity Projects\\Unity-Shooter\\Library\\PackageCache\\com.unity.ide.rider@1f60b3138684",
+      "resolvedPath": "C:\\gitboob\\Unity-Shooter\\Library\\PackageCache\\com.unity.ide.rider@1f60b3138684",
       "fingerprint": "1f60b3138684c97af67aa8d911b1632ba916d29d",
       "editorCompatibility": "2021.3.0a1",
       "version": "3.0.38",
@@ -452,7 +452,7 @@
     "com.unity.editorcoroutines@1.0.0": {
       "name": "com.unity.editorcoroutines",
       "displayName": "Editor Coroutines",
-      "resolvedPath": "C:\\Users\\paula\\Desktop\\Code\\Unity Projects\\Unity-Shooter\\Library\\PackageCache\\com.unity.editorcoroutines@7d48783e7b8c",
+      "resolvedPath": "C:\\gitboob\\Unity-Shooter\\Library\\PackageCache\\com.unity.editorcoroutines@7d48783e7b8c",
       "fingerprint": "7d48783e7b8cfcee5f8ef9ba787ed0d9dad4ebca",
       "editorCompatibility": "2018.1.0a1",
       "version": "1.0.0",
@@ -462,7 +462,7 @@
     "com.unity.performance.profile-analyzer@1.2.3": {
       "name": "com.unity.performance.profile-analyzer",
       "displayName": "Profile Analyzer",
-      "resolvedPath": "C:\\Users\\paula\\Desktop\\Code\\Unity Projects\\Unity-Shooter\\Library\\PackageCache\\com.unity.performance.profile-analyzer@a68e7bc84997",
+      "resolvedPath": "C:\\gitboob\\Unity-Shooter\\Library\\PackageCache\\com.unity.performance.profile-analyzer@a68e7bc84997",
       "fingerprint": "a68e7bc849973d943853204178d08a2bc7656ffe",
       "editorCompatibility": "2020.3.0a1",
       "version": "1.2.3",
@@ -472,7 +472,7 @@
     "com.unity.test-framework@1.6.0": {
       "name": "com.unity.test-framework",
       "displayName": "Test Framework",
-      "resolvedPath": "C:\\Users\\paula\\Desktop\\Code\\Unity Projects\\Unity-Shooter\\Library\\PackageCache\\com.unity.test-framework@d97b7cd61ded",
+      "resolvedPath": "C:\\gitboob\\Unity-Shooter\\Library\\PackageCache\\com.unity.test-framework@d97b7cd61ded",
       "fingerprint": "d97b7cd61dedd05f0fbaa425a40bd39d098f5cfc",
       "editorCompatibility": "6000.0.44f1",
       "version": "1.6.0",
@@ -482,7 +482,7 @@
     "com.unity.testtools.codecoverage@1.2.6": {
       "name": "com.unity.testtools.codecoverage",
       "displayName": "Code Coverage",
-      "resolvedPath": "C:\\Users\\paula\\Desktop\\Code\\Unity Projects\\Unity-Shooter\\Library\\PackageCache\\com.unity.testtools.codecoverage@205a02cbcb39",
+      "resolvedPath": "C:\\gitboob\\Unity-Shooter\\Library\\PackageCache\\com.unity.testtools.codecoverage@205a02cbcb39",
       "fingerprint": "205a02cbcb39584f20b51c49b853047aceb3a3a7",
       "editorCompatibility": "2019.3.0a1",
       "version": "1.2.6",
@@ -492,7 +492,7 @@
     "com.unity.burst@1.8.25": {
       "name": "com.unity.burst",
       "displayName": "Burst",
-      "resolvedPath": "C:\\Users\\paula\\Desktop\\Code\\Unity Projects\\Unity-Shooter\\Library\\PackageCache\\com.unity.burst@1df634d836b8",
+      "resolvedPath": "C:\\gitboob\\Unity-Shooter\\Library\\PackageCache\\com.unity.burst@1df634d836b8",
       "fingerprint": "1df634d836b8106f13dc82401a91b336d615a874",
       "editorCompatibility": "2021.3.0a1",
       "version": "1.8.25",
@@ -502,7 +502,7 @@
     "com.unity.mathematics@1.3.2": {
       "name": "com.unity.mathematics",
       "displayName": "Mathematics",
-      "resolvedPath": "C:\\Users\\paula\\Desktop\\Code\\Unity Projects\\Unity-Shooter\\Library\\PackageCache\\com.unity.mathematics@8017b507cc74",
+      "resolvedPath": "C:\\gitboob\\Unity-Shooter\\Library\\PackageCache\\com.unity.mathematics@8017b507cc74",
       "fingerprint": "8017b507cc74bf0a1dd14b18aa860569f807314d",
       "editorCompatibility": "2021.3.0a1",
       "version": "1.3.2",
@@ -512,7 +512,7 @@
     "com.unity.test-framework.performance@3.2.0": {
       "name": "com.unity.test-framework.performance",
       "displayName": "Performance testing API",
-      "resolvedPath": "C:\\Users\\paula\\Desktop\\Code\\Unity Projects\\Unity-Shooter\\Library\\PackageCache\\com.unity.test-framework.performance@0840f58e4562",
+      "resolvedPath": "C:\\gitboob\\Unity-Shooter\\Library\\PackageCache\\com.unity.test-framework.performance@0840f58e4562",
       "fingerprint": "0840f58e45624f7677679a0f8b6a5137689e607f",
       "editorCompatibility": "2020.3.0a1",
       "version": "3.2.0",
@@ -522,7 +522,7 @@
     "com.unity.rendering.light-transport@1.0.1": {
       "name": "com.unity.rendering.light-transport",
       "displayName": "Unity Light Transport Library",
-      "resolvedPath": "C:\\Users\\paula\\Desktop\\Code\\Unity Projects\\Unity-Shooter\\Library\\PackageCache\\com.unity.rendering.light-transport@2c9279f90d7c",
+      "resolvedPath": "C:\\gitboob\\Unity-Shooter\\Library\\PackageCache\\com.unity.rendering.light-transport@2c9279f90d7c",
       "fingerprint": "2c9279f90d7c8dfb6e76e3f90b6b3be1cafabfbc",
       "editorCompatibility": "2023.3.0b1",
       "version": "1.0.1",
@@ -532,7 +532,7 @@
     "com.unity.settings-manager@2.1.0": {
       "name": "com.unity.settings-manager",
       "displayName": "Settings Manager",
-      "resolvedPath": "C:\\Users\\paula\\Desktop\\Code\\Unity Projects\\Unity-Shooter\\Library\\PackageCache\\com.unity.settings-manager@41738c275190",
+      "resolvedPath": "C:\\gitboob\\Unity-Shooter\\Library\\PackageCache\\com.unity.settings-manager@41738c275190",
       "fingerprint": "41738c27519039c335849eb78949382f4d7a3544",
       "editorCompatibility": "2022.3.0a1",
       "version": "2.1.0",
@@ -542,7 +542,7 @@
     "com.unity.ext.nunit@2.0.5": {
       "name": "com.unity.ext.nunit",
       "displayName": "Custom NUnit",
-      "resolvedPath": "C:\\Users\\paula\\Desktop\\Code\\Unity Projects\\Unity-Shooter\\Library\\PackageCache\\com.unity.ext.nunit@031a54704bff",
+      "resolvedPath": "C:\\gitboob\\Unity-Shooter\\Library\\PackageCache\\com.unity.ext.nunit@031a54704bff",
       "fingerprint": "031a54704bffe39e6a0324909f8eaa4565bdebf2",
       "editorCompatibility": "2019.4.0a1",
       "version": "2.0.5",

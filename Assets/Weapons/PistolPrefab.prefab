@@ -189,6 +189,7 @@ MonoBehaviour:
   muzzleFlash: {fileID: 0}
   environmentHitEffect: {fileID: 0}
   playerHitEffect: {fileID: 0}
+  animator: {fileID: 4526888972762009736}
 --- !u!95 &4526888972762009736
 Animator:
   serializedVersion: 7
@@ -276,3 +277,4 @@ MonoBehaviour:
   muzzleFlash: {fileID: 0}
   environmentHitEffect: {fileID: 0}
   playerHitEffect: {fileID: 0}
+  animator: {fileID: 0}
