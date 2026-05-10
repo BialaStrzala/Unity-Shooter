@@ -12,7 +12,7 @@ public class GunBase : NetworkBehaviour
     [SerializeField] private ParticleSystem muzzleFlash;
     [SerializeField] private ParticleSystem environmentHitEffect;
     [SerializeField] private ParticleSystem playerHitEffect;
-
+    [SerializeField] private Animator animator;
     private void Update()
     {
         SetIKTargets();
@@ -38,7 +38,7 @@ public class GunBase : NetworkBehaviour
 
         //animation
         PlayShotEffect();
-
+        
         //didn't hit anything
         if(!Physics.Raycast(cameraTransform.position, cameraTransform.forward,out var hit, data.range, hitLayer))
         {
@@ -66,6 +66,10 @@ public class GunBase : NetworkBehaviour
         if(muzzleFlash != null)
         {
             muzzleFlash.Play();
+        }
+        if (animator != null)
+        {
+            animator.SetTrigger("Shoot");
         }
     }
 
