@@ -12,7 +12,8 @@ public class GunBase : NetworkBehaviour
     [SerializeField] private ParticleSystem muzzleFlash;
     [SerializeField] private ParticleSystem environmentHitEffect;
     [SerializeField] private ParticleSystem playerHitEffect;
-
+    [SerializeField] private Animator animator;
+    private Animator[] anims;
     private void Update()
     {
         SetIKTargets();
@@ -20,6 +21,26 @@ public class GunBase : NetworkBehaviour
         if(Input.GetKeyDown(KeyCode.Mouse0))
         {
             Shoot();
+        }
+    }
+    private void Awake()
+    {
+        Debug.Log("=== GUN DEBUG ===");
+        Debug.Log("Object: " + gameObject.name);
+    
+        // ВАЖНО: Передаем 'true', чтобы искать даже в выключенных дочерних объектах
+        anims = GetComponentsInChildren<Animator>(true); 
+    
+        Debug.Log("Animators found: " + anims.Length);
+    
+        if (anims.Length > 0)
+        {
+            animator = anims[0];
+            Debug.Log($"Animator FOUND on {animator.gameObject.name}");
+        }
+        else
+        {
+            Debug.LogError($"CRITICAL: No Animator found in {gameObject.name} or its children!");
         }
     }
 
@@ -38,7 +59,7 @@ public class GunBase : NetworkBehaviour
 
         //animation
         PlayShotEffect();
-
+        
         //didn't hit anything
         if(!Physics.Raycast(cameraTransform.position, cameraTransform.forward,out var hit, data.range, hitLayer))
         {
@@ -66,6 +87,14 @@ public class GunBase : NetworkBehaviour
         if(muzzleFlash != null)
         {
             muzzleFlash.Play();
+        }
+        if (animator == null)
+        {
+            Debug.LogError("Animator NOT assigned!");
+        }
+        else
+        {
+            Debug.Log("Animator OK: " + animator.gameObject.name);
         }
     }
 
