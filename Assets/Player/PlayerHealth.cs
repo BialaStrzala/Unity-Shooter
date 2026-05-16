@@ -4,7 +4,7 @@ using System;
 
 public class PlayerHealth : NetworkBehaviour
 {
-    [SerializeField] private SyncVar<int> health = new(100);
+    [SerializeField] private SyncVar<int> health = new(150);
     [SerializeField] private int selfLayer, otherLayer;
     public Action<PlayerID> OnDeath_Server;
     public int GetHealth => health.value;

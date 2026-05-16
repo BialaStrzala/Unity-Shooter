@@ -33,7 +33,7 @@ public class PlayerController : NetworkBehaviour
     private float boostTimer;
 
     [Header("Look Settings")]
-    [SerializeField] private float lookSensitivity = 2f;
+    [SerializeField] private float lookSensitivity = 3f;
     [SerializeField] private float maxLookAngle = 80f;
 
     [Header("References")]

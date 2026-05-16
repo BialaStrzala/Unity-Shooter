@@ -17,7 +17,7 @@ public class GameViewManager : MonoBehaviour
         ShowViewInternal(defaultView);
     }
 
-    private void Oestroy()
+    private void Destroy()
     {
         InstanceHandler.UnregisterInstance<GameViewManager>();        
     }

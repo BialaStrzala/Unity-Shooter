@@ -16,6 +16,6 @@ MonoBehaviour:
   modelPrefab: {fileID: 1829057068892873038, guid: 860a5a8d653ff5646bfbeb8ea1cc2fcc, type: 3}
   fireRate: 0.2
   range: 20
-  damage: 10
+  damage: 20
   reloadTime: 1.5
   bullets: 20

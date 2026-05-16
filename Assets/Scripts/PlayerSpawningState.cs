@@ -7,9 +7,16 @@ public class PlayerSpawningState : StateNode
 {
     [SerializeField] private PlayerHealth playerPrefab;
     [SerializeField] private List<Transform> spawnPoints = new();
+    [SerializeField] public Camera menuCamera;
 
     public override void Enter(bool asServer)
     {
+        Debug.Log("Spawning players state");
+        menuCamera.gameObject.SetActive(false);
+
+        if(InstanceHandler.TryGetInstance(out GameViewManager gameViewManager))
+            gameViewManager.ShowView<MainGameView>(true);
+
         base.Enter(asServer);
         if(!asServer){return;}
         DespawnPlayers();

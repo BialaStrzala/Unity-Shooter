@@ -67,8 +67,8 @@ MonoBehaviour:
   rightIKTarget: {fileID: 5579456335232134065}
   leftIKTarget: {fileID: 2120223513008369312}
   muzzleFlash: {fileID: 5802697842012774323}
-  environmentHitEffect: {fileID: 0}
-  playerHitEffect: {fileID: 0}
+  environmentHitEffect: {fileID: 923361415246287586, guid: 2d40fd90023957a4b9897584c9392368, type: 3}
+  playerHitEffect: {fileID: 5077819531597492689, guid: 53d3a294da189da45a667bf35a759f63, type: 3}
 --- !u!1 &1742563711945863833
 GameObject:
   m_ObjectHideFlags: 0
@@ -732,7 +732,7 @@ MonoBehaviour:
   _networkRules: {fileID: 0}
   _visitiblityRules: {fileID: 0}
   health:
-    _value: 100
+    _value: 150
     _ownerAuth: 0
     _sendIntervalInSeconds: 0
   selfLayer: 6

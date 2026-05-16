@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WeaponData
   weaponName: Rifle
   modelPrefab: {fileID: 3344912294720958483, guid: df956e004c574bb4cb06c2d94bfd79be, type: 3}
-  fireRate: 0.2
+  fireRate: 1
   range: 20
   damage: 50
-  reloadTime: 5
-  bullets: 2
+  reloadTime: 10
+  bullets: 1
