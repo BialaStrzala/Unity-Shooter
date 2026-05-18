@@ -11,7 +11,7 @@ public class JumpPadScript : MonoBehaviour
         if (player != null)
         {
             //Debug.Log("Applying speed boost");
-            Vector3 direction = transform.forward;
+            Vector3 direction = transform.up * boostForce;
             direction.x = 0f;
             direction.Normalize();
             player.ApplyBoost(direction * boostForce, boostDuration);
