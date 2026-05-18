@@ -7,121 +7,139 @@ public class GunBase : NetworkBehaviour
     [SerializeField] private LayerMask hitLayer;
     [SerializeField] private WeaponData data;
     private float nextFireTime;
+    
     [SerializeField] private Transform rightHandTarget, leftHandTarget;
     [SerializeField] private Transform rightIKTarget, leftIKTarget;
+    
     [SerializeField] private ParticleSystem muzzleFlash;
     [SerializeField] private ParticleSystem environmentHitEffect;
     [SerializeField] private ParticleSystem playerHitEffect;
-    [SerializeField] private Animator animator;
-    private Animator[] anims;
-    private void Update()
-    {
-        SetIKTargets();
-        if(!isOwner){return;} //not owner
-        if(Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            Shoot();
-        }
-    }
-    private void Awake()
-    {
-        Debug.Log("=== GUN DEBUG ===");
-        Debug.Log("Object: " + gameObject.name);
     
-        // ВАЖНО: Передаем 'true', чтобы искать даже в выключенных дочерних объектах
-        anims = GetComponentsInChildren<Animator>(true); 
-    
-        Debug.Log("Animators found: " + anims.Length);
-    
-        if (anims.Length > 0)
-        {
-            animator = anims[0];
-            Debug.Log($"Animator FOUND on {animator.gameObject.name}");
-        }
-        else
-        {
-            Debug.LogError($"CRITICAL: No Animator found in {gameObject.name} or its children!");
-        }
-    }
+    public Animator animator; 
+    private float logTimer;
 
     public void SetData(WeaponData newData)
     {
         data = newData;
     }
 
+    private void Update()
+    {
+        // 1. Najpierw twardo sprawdzamy: czy to nasz gracz?
+        // Jeśli broń jest w rękach wroga — nie mamy prawa nasłuchiwać LPM ani konfigurować JEGO animatora!
+        if (!isOwner) return;
+
+        // 2. Agresywne wyszukiwanie komponentu Animator
+        if (animator == null)
+        {
+            animator = GetComponent<Animator>();
+            if (animator == null) animator = GetComponentInChildren<Animator>(true);
+            if (animator == null) animator = GetComponentInParent<Animator>();
+        }
+
+        // 3. Naprawa Animatora kontrolerem z karty danych (WeaponData)
+        if (animator != null && animator.runtimeAnimatorController == null && data != null && data.animatorController != null)
+        {
+            animator.runtimeAnimatorController = data.animatorController;
+        }
+
+        // 4. Działanie IK (kinematyki odwrotnej) dla rąk
+        if (rightHandTarget != null && rightIKTarget != null) 
+        {
+            SetIKTargets();
+        }
+
+        // 5. Obsługa naciśnięcia spustu
+        if (Input.GetButtonDown("Fire1"))
+        {
+            Shoot();
+        }
+    }
+
     private void Shoot()
     {
-        //has weapon equipped
-        if(!data){return;}
-        //cooldown
-        if(Time.unscaledTime < nextFireTime){return;}
-        nextFireTime = Time.unscaledTime + data.fireRate;
+        // Ustawienia domyślne na wypadek braku danych
+        int currentDamage = 10; 
+        float currentRange = 100f;
+        float currentFireRate = 0.2f;
 
-        //animation
+        if (data != null)
+        {
+            currentDamage = data.damage; // Teraz int pasuje do int bez błędów kompilacji!
+            currentRange = data.range;
+            currentFireRate = data.fireRate;
+        }
+
+        // Wyszukiwanie kamery gracza
+        if (cameraTransform == null)
+        {
+            Camera localCam = transform.root.GetComponentInChildren<Camera>();
+            if (localCam != null) cameraTransform = localCam.transform;
+            else if (Camera.main != null) cameraTransform = Camera.main.transform;
+
+            if (cameraTransform == null) return;
+        }
+
+        // Uruchomienie efektów błysku i animacji
         PlayShotEffect();
         
-        //didn't hit anything
-        if(!Physics.Raycast(cameraTransform.position, cameraTransform.forward,out var hit, data.range, hitLayer))
+        // Fizyczny promień strzału (Raycast)
+        if (!Physics.Raycast(cameraTransform.position, cameraTransform.forward, out var hit, currentRange, hitLayer))
         {
+            Debug.Log("Promień strzału poleciał w niebo.");
             return;
         }
 
-        //if hit player
-        if(hit.transform.TryGetComponent(out PlayerHealth playerHealth))
+        // Rejestracja trafień
+        if (hit.transform.TryGetComponent(out PlayerHealth playerHealth))
         {
-            Debug.Log($"Hit player!!! With: {data.weaponName}, for dmg: -{data.damage}");
-            playerHealth.ChangeHealth(-data.damage);
+            playerHealth.ChangeHealth(-currentDamage);
             PlayPlayerHitEffect(playerHealth, playerHealth.transform.InverseTransformPoint(hit.point), hit.normal);
+            Debug.Log($"Trafiono gracza! Zadane obrażenia: {currentDamage}");
         }
-        //hit environment
         else
         {
-            Debug.Log($"Hit: {hit.transform.name}");
             PlayEnvironmentHitEffect(hit.point, hit.normal);
+            Debug.Log("Gdzieś trafiono! Obiekt: " + hit.transform.name);
         }
     }
 
-    [ObserversRpc(runLocally:true)]
+    [ObserversRpc(runLocally: true)]
     private void PlayShotEffect()
     {
-        if(muzzleFlash != null)
+        if (muzzleFlash != null) muzzleFlash.Play();
+        
+        if (animator != null && animator.runtimeAnimatorController != null)
         {
-            muzzleFlash.Play();
-        }
-        if (animator == null)
-        {
-            Debug.LogError("Animator NOT assigned!");
-        }
-        else
-        {
-            Debug.Log("Animator OK: " + animator.gameObject.name);
+            // Zamiast Play("PistolAnim") aktywujemy trigger Shoot, 
+            // aby zadziałała strzałka przejścia, którą widzieliśmy na zrzucie ekranu!
+            animator.SetTrigger("Shoot");
         }
     }
 
-    [ObserversRpc(runLocally:true)]
+    [ObserversRpc(runLocally: true)]
     private void PlayEnvironmentHitEffect(Vector3 position, Vector3 normal)
     {
-        if(environmentHitEffect)
-            {
-                var effect = Instantiate(environmentHitEffect, position, Quaternion.LookRotation(normal));
-                effect.Play();
-                //Destroy(effect.gameObject, 2f);
-            }
+        if (environmentHitEffect)
+        {
+            var effect = Instantiate(environmentHitEffect, position, Quaternion.LookRotation(normal));
+            effect.Play();
+        }
     }
 
-    [ObserversRpc(runLocally:true)]
+    [ObserversRpc(runLocally: true)]
     private void PlayPlayerHitEffect(PlayerHealth player, Vector3 localPosition, Vector3 normal)
     {
         if (playerHitEffect && player)
         {
             var effect = Instantiate(playerHitEffect, player.transform.TransformPoint(localPosition), Quaternion.LookRotation(normal));
             effect.Play();
-            //Destroy(effect.gameObject, 2f);
         }
     }
 
     private void SetIKTargets()
-    {
+    {   
+        if (rightHandTarget == null || rightIKTarget == null || leftIKTarget == null || leftHandTarget == null) return;
         rightIKTarget.SetPositionAndRotation(rightHandTarget.position, rightHandTarget.rotation);
         leftIKTarget.SetPositionAndRotation(leftHandTarget.position, leftHandTarget.rotation);
     }

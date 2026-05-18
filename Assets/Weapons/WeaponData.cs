@@ -3,6 +3,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Weapons/Weapon Data")]
 public class WeaponData : ScriptableObject
 {
+    public RuntimeAnimatorController animatorController;
     public string weaponName;
     public GameObject modelPrefab;
     public float fireRate = 0.2f;

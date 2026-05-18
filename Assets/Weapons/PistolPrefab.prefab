@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 9190677834844770388}
   - component: {fileID: 4728473866037889234}
   - component: {fileID: 4526888972762009736}
+  - component: {fileID: 1518288713710878928}
   m_Layer: 0
   m_Name: PistolPrefab
   m_TagString: Untagged
@@ -147,13 +148,15 @@ Transform:
   m_GameObject: {fileID: 1829057068892873038}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.05, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3253030415679645291}
   - {fileID: 7307367756061493670}
   - {fileID: 88274554772754207}
+  - {fileID: 4972256170126845597}
+  - {fileID: 2660828068663846455}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4728473866037889234
@@ -182,10 +185,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 183
   data: {fileID: 11400000, guid: 10a565264c4bbd14f9a57fcdfe625e57, type: 2}
-  rightHandTarget: {fileID: 0}
-  leftHandTarget: {fileID: 0}
-  rightIKTarget: {fileID: 0}
-  leftIKTarget: {fileID: 0}
+  rightHandTarget: {fileID: 4972256170126845597}
+  leftHandTarget: {fileID: 2660828068663846455}
+  rightIKTarget: {fileID: 4972256170126845597}
+  leftIKTarget: {fileID: 2660828068663846455}
   muzzleFlash: {fileID: 0}
   environmentHitEffect: {fileID: 0}
   playerHitEffect: {fileID: 0}
@@ -212,6 +215,31 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1518288713710878928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1829057068892873038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7b598b9d8509d64abb9fdaf07fa3f6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: PurrNet.Runtime::PurrNet.NetworkAnimator
+  _isSetup: 0
+  _prefabId: -2147483648
+  _componentIndex: -2147483648
+  _shouldBePooled: 0
+  _parent: {fileID: 0}
+  _invertedPathToNearestParent: 
+  _directChildren: []
+  _networkRules: {fileID: 0}
+  _visitiblityRules: {fileID: 0}
+  _animator: {fileID: 4526888972762009736}
+  _ownerAuth: 1
+  _autoSyncParameters: 1
+  _dontSyncParameters: []
 --- !u!1 &6899961407696339599
 GameObject:
   m_ObjectHideFlags: 0
@@ -270,11 +298,73 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   data: {fileID: 0}
-  rightHandTarget: {fileID: 0}
-  leftHandTarget: {fileID: 0}
-  rightIKTarget: {fileID: 0}
-  leftIKTarget: {fileID: 0}
+  rightHandTarget: {fileID: 4972256170126845597}
+  leftHandTarget: {fileID: 2660828068663846455}
+  rightIKTarget: {fileID: 4972256170126845597}
+  leftIKTarget: {fileID: 2660828068663846455}
   muzzleFlash: {fileID: 0}
   environmentHitEffect: {fileID: 0}
   playerHitEffect: {fileID: 0}
   animator: {fileID: 0}
+--- !u!1 &7493859791055753177
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4972256170126845597}
+  m_Layer: 0
+  m_Name: RightHand_IK_Target
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4972256170126845597
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7493859791055753177}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.05, y: -0.049, z: -0.218}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9190677834844770388}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8175378708865102827
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2660828068663846455}
+  m_Layer: 0
+  m_Name: LeftHand_IK_Target
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2660828068663846455
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8175378708865102827}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.052, y: -0.045, z: -0.2292}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9190677834844770388}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
