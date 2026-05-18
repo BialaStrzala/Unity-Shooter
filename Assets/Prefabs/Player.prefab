@@ -69,6 +69,7 @@ MonoBehaviour:
   muzzleFlash: {fileID: 5802697842012774323}
   environmentHitEffect: {fileID: 0}
   playerHitEffect: {fileID: 0}
+  animator: {fileID: 4526888972762009736, guid: 860a5a8d653ff5646bfbeb8ea1cc2fcc, type: 3}
 --- !u!1 &1742563711945863833
 GameObject:
   m_ObjectHideFlags: 0
@@ -550,6 +551,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7461903698999656236}
+  - component: {fileID: 4847022983878074532}
   m_Layer: 0
   m_Name: WeaponHolder
   m_TagString: Untagged
@@ -574,6 +576,28 @@ Transform:
   - {fileID: 9145014715710812454}
   m_Father: {fileID: 1827356269281484218}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &4847022983878074532
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5649783980467732398}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d8e44244417fc484f8b897829be77789, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6100331151599228146
 GameObject:
   m_ObjectHideFlags: 0
@@ -1262,6 +1286,7 @@ MonoBehaviour:
   muzzleFlash: {fileID: 9183756041262964565}
   environmentHitEffect: {fileID: 923361415246287586, guid: 2d40fd90023957a4b9897584c9392368, type: 3}
   playerHitEffect: {fileID: 5077819531597492689, guid: 53d3a294da189da45a667bf35a759f63, type: 3}
+  animator: {fileID: 4526888972762009736, guid: 860a5a8d653ff5646bfbeb8ea1cc2fcc, type: 3}
 --- !u!4 &1951740761214177543 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 847d603838aa33347a37d27ef6b2b187, type: 3}

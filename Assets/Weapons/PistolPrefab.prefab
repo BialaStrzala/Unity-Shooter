@@ -131,7 +131,6 @@ GameObject:
   - component: {fileID: 9190677834844770388}
   - component: {fileID: 4728473866037889234}
   - component: {fileID: 4526888972762009736}
-  - component: {fileID: 1518288713710878928}
   m_Layer: 0
   m_Name: PistolPrefab
   m_TagString: Untagged
@@ -215,31 +214,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1518288713710878928
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1829057068892873038}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7b598b9d8509d64abb9fdaf07fa3f6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: PurrNet.Runtime::PurrNet.NetworkAnimator
-  _isSetup: 0
-  _prefabId: -2147483648
-  _componentIndex: -2147483648
-  _shouldBePooled: 0
-  _parent: {fileID: 0}
-  _invertedPathToNearestParent: 
-  _directChildren: []
-  _networkRules: {fileID: 0}
-  _visitiblityRules: {fileID: 0}
-  _animator: {fileID: 4526888972762009736}
-  _ownerAuth: 1
-  _autoSyncParameters: 1
-  _dontSyncParameters: []
 --- !u!1 &6899961407696339599
 GameObject:
   m_ObjectHideFlags: 0
@@ -297,7 +271,7 @@ MonoBehaviour:
   hitLayer:
     serializedVersion: 2
     m_Bits: 0
-  data: {fileID: 0}
+  data: {fileID: 11400000, guid: 10a565264c4bbd14f9a57fcdfe625e57, type: 2}
   rightHandTarget: {fileID: 4972256170126845597}
   leftHandTarget: {fileID: 2660828068663846455}
   rightIKTarget: {fileID: 4972256170126845597}
@@ -305,7 +279,7 @@ MonoBehaviour:
   muzzleFlash: {fileID: 0}
   environmentHitEffect: {fileID: 0}
   playerHitEffect: {fileID: 0}
-  animator: {fileID: 0}
+  animator: {fileID: 4526888972762009736}
 --- !u!1 &7493859791055753177
 GameObject:
   m_ObjectHideFlags: 0
