@@ -8,12 +8,14 @@ public class PlayerHealth : NetworkBehaviour
     [SerializeField] private int selfLayer, otherLayer;
     public Action<PlayerID> OnDeath_Server;
     public int GetHealth => health.value;
+    private GameViewManager gameViewManager;
 
     protected override void OnSpawned()
     {
         base.OnSpawned();
         var actualLayer = isOwner ? selfLayer : otherLayer;
         SetLayerResursive(gameObject, actualLayer);
+        gameViewManager = InstanceHandler.GetInstance<GameViewManager>();
 
         if (isOwner)
         {
@@ -61,7 +63,7 @@ public class PlayerHealth : NetworkBehaviour
         //red flash for taking dmg here
         if(newHealth < health.value)
         {
-            //InstanceHandler.GetInstance<MainGameView>().PlayDamageEffect();
+            InstanceHandler.GetInstance<MainGameView>().DamageFlash();
         }
     }
 }

@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 639122067533290297
-    m_Hash: 3661067497
+      ticks: 639151358701801168
+    m_Hash: 2019805873
   m_LockFileStatus:
     m_FilePath: C:/Users/paula/Desktop/Code/Unity Projects/Unity-Shooter/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 639122067533396743
-    m_Hash: 445241154
+      ticks: 639151358728203530
+    m_Hash: 1914740893
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -22,6 +22,86 @@ m_LocalPackages:
 m_ProjectPath: C:/Users/paula/Desktop/Code/Unity Projects/Unity-Shooter/Packages
 m_EditorVersion: 6000.2.7f2 (2b518236b676)
 m_ResolvedPackages:
+- packageId: com.unity.2d.sprite@1.0.0
+  testable: 0
+  isDirectDependency: 1
+  version: 1.0.0
+  source: 2
+  resolvedPath: C:\Users\paula\Desktop\Code\Unity Projects\Unity-Shooter\Library\PackageCache\com.unity.2d.sprite@331abd9a1e2f
+  assetPath: Packages/com.unity.2d.sprite
+  name: com.unity.2d.sprite
+  displayName: 2D Sprite
+  author:
+    name: 
+    email: 
+    url: 
+  category: 2D
+  type: 
+  description: Use Unity Sprite Editor Window to create and edit Sprite asset properties
+    like pivot, borders and Physics shape
+  errors: []
+  versions:
+    all:
+    - 1.0.0
+    compatible:
+    - 1.0.0
+    recommended: 1.0.0
+    deprecated: []
+  dependencies: []
+  resolvedDependencies: []
+  keywords:
+  - 2d
+  - sprite
+  - sprite editor window
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+    configSource: 0
+    compliance:
+      status: 0
+      violations: []
+  hideInEditor: 1
+  entitlements:
+    licensingModel: 0
+  isAssetStorePackage: 0
+  datePublishedTicks: 0
+  documentationUrl: 
+  hasRepository: 0
+  repository:
+    type: 
+    url: 
+    revision: 
+    path: 
+  unityLifecycle:
+    version: 1.0.0
+    nextVersion: 
+    recommendedVersion: 
+    isDeprecated: 0
+    deprecationMessage: 
+    isDiscoverable: 1
+  isDeprecated: 0
+  deprecationMessage: 
+  git:
+    hash: 
+    revision: 
+  upmReserved: 
+  assetStore:
+    productId: 
+  fingerprint: 331abd9a1e2ff424a1ef2626e16936071ab7ce3d
+  editorCompatibility:
+    compatibilityLevel: 0
+    minimumPackageVersion: 1.0.0
+    minimumUnityVersion: 2019.2.0a1
+  compliance:
+    status: 0
+    violation:
+      scopePatternExpression: 
+      message: 
+      readMoreLink: 
 - packageId: com.unity.animation.rigging@1.3.1
   testable: 0
   isDirectDependency: 1
@@ -473,6 +553,109 @@ m_ResolvedPackages:
       scopePatternExpression: 
       message: 
       readMoreLink: 
+- packageId: com.unity.ide.vscode@1.1.4
+  testable: 0
+  isDirectDependency: 1
+  version: 1.1.4
+  source: 1
+  resolvedPath: C:\Users\paula\Desktop\Code\Unity Projects\Unity-Shooter\Library\PackageCache\com.unity.ide.vscode@1a4cb8baed51
+  assetPath: Packages/com.unity.ide.vscode
+  name: com.unity.ide.vscode
+  displayName: Visual Studio Code Editor
+  author:
+    name: 
+    email: 
+    url: 
+  category: 
+  type: asset
+  description: Code editor integration for supporting Visual Studio Code as code
+    editor for unity. Adds support for generating csproj files for intellisense purposes,
+    auto discovery of installations, etc.
+  errors: []
+  versions:
+    all:
+    - 1.0.2
+    - 1.0.3
+    - 1.0.7
+    - 1.1.0
+    - 1.1.2
+    - 1.1.3
+    - 1.1.4
+    - 1.2.0
+    - 1.2.1
+    - 1.2.2
+    - 1.2.3
+    - 1.2.4
+    - 1.2.5
+    compatible:
+    - 1.0.2
+    - 1.0.3
+    - 1.0.7
+    - 1.1.0
+    - 1.1.2
+    - 1.1.3
+    - 1.1.4
+    - 1.2.0
+    - 1.2.1
+    - 1.2.2
+    - 1.2.3
+    - 1.2.4
+    - 1.2.5
+    recommended: 
+    deprecated: []
+  dependencies: []
+  resolvedDependencies: []
+  keywords: []
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+    configSource: 0
+    compliance:
+      status: 0
+      violations: []
+  hideInEditor: 1
+  entitlements:
+    licensingModel: 1
+  isAssetStorePackage: 0
+  datePublishedTicks: 637140134180000000
+  documentationUrl: 
+  hasRepository: 1
+  repository:
+    type: git
+    url: git@github.cds.internal.unity3d.com:unity/com.unity.ide.vscode.git
+    revision: 5b09e2bc6a13b557ca1ebf1db5f960746631630e
+    path: 
+  unityLifecycle:
+    version: 
+    nextVersion: 
+    recommendedVersion: 
+    isDeprecated: 1
+    deprecationMessage: Visual Studio Code package is not supported anymore. You
+      can continue to use it, but we won't provide any update anymore.
+    isDiscoverable: 0
+  isDeprecated: 0
+  deprecationMessage: 
+  git:
+    hash: 
+    revision: 
+  upmReserved: 
+  assetStore:
+    productId: 
+  fingerprint: 1a4cb8baed5112216a5206ec440095cd28ddd577
+  editorCompatibility:
+    compatibilityLevel: 0
+    minimumPackageVersion: 1.0.2
+    minimumUnityVersion: 2019.2.0a12
+  compliance:
+    status: 0
+    violation:
+      scopePatternExpression: 
+      message: 
+      readMoreLink: 
 - packageId: com.unity.inputsystem@1.14.2
   testable: 0
   isDirectDependency: 1
@@ -847,6 +1030,96 @@ m_ResolvedPackages:
     compatibilityLevel: 0
     minimumPackageVersion: 17.2.0
     minimumUnityVersion: 6000.2.0a1
+  compliance:
+    status: 0
+    violation:
+      scopePatternExpression: 
+      message: 
+      readMoreLink: 
+- packageId: com.unity.test-framework@1.6.0
+  testable: 0
+  isDirectDependency: 1
+  version: 1.6.0
+  source: 2
+  resolvedPath: C:\Users\paula\Desktop\Code\Unity Projects\Unity-Shooter\Library\PackageCache\com.unity.test-framework@d97b7cd61ded
+  assetPath: Packages/com.unity.test-framework
+  name: com.unity.test-framework
+  displayName: Test Framework
+  author:
+    name: 
+    email: 
+    url: 
+  category: Unity Test Framework
+  type: 
+  description: Test framework for running Edit mode and Play mode tests in Unity.
+  errors: []
+  versions:
+    all:
+    - 1.6.0
+    compatible:
+    - 1.6.0
+    recommended: 1.6.0
+    deprecated: []
+  dependencies:
+  - name: com.unity.ext.nunit
+    version: 2.0.3
+  - name: com.unity.modules.imgui
+    version: 1.0.0
+  - name: com.unity.modules.jsonserialize
+    version: 1.0.0
+  resolvedDependencies:
+  - name: com.unity.ext.nunit
+    version: 2.0.5
+  - name: com.unity.modules.imgui
+    version: 1.0.0
+  - name: com.unity.modules.jsonserialize
+    version: 1.0.0
+  keywords:
+  - Test
+  - TestFramework
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+    configSource: 0
+    compliance:
+      status: 0
+      violations: []
+  hideInEditor: 1
+  entitlements:
+    licensingModel: 0
+  isAssetStorePackage: 0
+  datePublishedTicks: 0
+  documentationUrl: 
+  hasRepository: 0
+  repository:
+    type: 
+    url: 
+    revision: 
+    path: 
+  unityLifecycle:
+    version: 1.6.0
+    nextVersion: 
+    recommendedVersion: 
+    isDeprecated: 0
+    deprecationMessage: 
+    isDiscoverable: 1
+  isDeprecated: 0
+  deprecationMessage: 
+  git:
+    hash: 
+    revision: 
+  upmReserved: 
+  assetStore:
+    productId: 
+  fingerprint: d97b7cd61dedd05f0fbaa425a40bd39d098f5cfc
+  editorCompatibility:
+    compatibilityLevel: 0
+    minimumPackageVersion: 1.6.0
+    minimumUnityVersion: 6000.0.44f1
   compliance:
     status: 0
     violation:
@@ -4554,6 +4827,86 @@ m_ResolvedPackages:
       scopePatternExpression: 
       message: 
       readMoreLink: 
+- packageId: com.unity.ext.nunit@2.0.5
+  testable: 0
+  isDirectDependency: 0
+  version: 2.0.5
+  source: 2
+  resolvedPath: C:\Users\paula\Desktop\Code\Unity Projects\Unity-Shooter\Library\PackageCache\com.unity.ext.nunit@031a54704bff
+  assetPath: Packages/com.unity.ext.nunit
+  name: com.unity.ext.nunit
+  displayName: Custom NUnit
+  author:
+    name: 
+    email: 
+    url: 
+  category: Libraries
+  type: 
+  description: A custom version of NUnit used by Unity Test Framework. Based on NUnit
+    version 3.5 and works with all platforms, il2cpp and Mono AOT.
+  errors: []
+  versions:
+    all:
+    - 2.0.5
+    compatible:
+    - 2.0.5
+    recommended: 2.0.5
+    deprecated: []
+  dependencies: []
+  resolvedDependencies: []
+  keywords:
+  - nunit
+  - unittest
+  - test
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+    configSource: 0
+    compliance:
+      status: 0
+      violations: []
+  hideInEditor: 1
+  entitlements:
+    licensingModel: 0
+  isAssetStorePackage: 0
+  datePublishedTicks: 0
+  documentationUrl: https://docs.unity3d.com/Packages/com.unity.ext.nunit@2.0/manual/index.html
+  hasRepository: 0
+  repository:
+    type: 
+    url: 
+    revision: 
+    path: 
+  unityLifecycle:
+    version: 2.0.5
+    nextVersion: 
+    recommendedVersion: 
+    isDeprecated: 0
+    deprecationMessage: 
+    isDiscoverable: 0
+  isDeprecated: 0
+  deprecationMessage: 
+  git:
+    hash: 
+    revision: 
+  upmReserved: 
+  assetStore:
+    productId: 
+  fingerprint: 031a54704bffe39e6a0324909f8eaa4565bdebf2
+  editorCompatibility:
+    compatibilityLevel: 0
+    minimumPackageVersion: 2.0.5
+    minimumUnityVersion: 2019.4.0a1
+  compliance:
+    status: 0
+    violation:
+      scopePatternExpression: 
+      message: 
+      readMoreLink: 
 - packageId: com.unity.render-pipelines.core@17.2.0
   testable: 0
   isDirectDependency: 0
@@ -5228,96 +5581,6 @@ m_ResolvedPackages:
     compatibilityLevel: 0
     minimumPackageVersion: 1.2.3
     minimumUnityVersion: 2020.3.0a1
-  compliance:
-    status: 0
-    violation:
-      scopePatternExpression: 
-      message: 
-      readMoreLink: 
-- packageId: com.unity.test-framework@1.6.0
-  testable: 0
-  isDirectDependency: 0
-  version: 1.6.0
-  source: 2
-  resolvedPath: C:\Users\paula\Desktop\Code\Unity Projects\Unity-Shooter\Library\PackageCache\com.unity.test-framework@d97b7cd61ded
-  assetPath: Packages/com.unity.test-framework
-  name: com.unity.test-framework
-  displayName: Test Framework
-  author:
-    name: 
-    email: 
-    url: 
-  category: Unity Test Framework
-  type: 
-  description: Test framework for running Edit mode and Play mode tests in Unity.
-  errors: []
-  versions:
-    all:
-    - 1.6.0
-    compatible:
-    - 1.6.0
-    recommended: 1.6.0
-    deprecated: []
-  dependencies:
-  - name: com.unity.ext.nunit
-    version: 2.0.3
-  - name: com.unity.modules.imgui
-    version: 1.0.0
-  - name: com.unity.modules.jsonserialize
-    version: 1.0.0
-  resolvedDependencies:
-  - name: com.unity.ext.nunit
-    version: 2.0.5
-  - name: com.unity.modules.imgui
-    version: 1.0.0
-  - name: com.unity.modules.jsonserialize
-    version: 1.0.0
-  keywords:
-  - Test
-  - TestFramework
-  registry:
-    id: main
-    name: 
-    url: https://packages.unity.com
-    scopes: []
-    isDefault: 1
-    capabilities: 7
-    configSource: 0
-    compliance:
-      status: 0
-      violations: []
-  hideInEditor: 1
-  entitlements:
-    licensingModel: 0
-  isAssetStorePackage: 0
-  datePublishedTicks: 0
-  documentationUrl: 
-  hasRepository: 0
-  repository:
-    type: 
-    url: 
-    revision: 
-    path: 
-  unityLifecycle:
-    version: 1.6.0
-    nextVersion: 
-    recommendedVersion: 
-    isDeprecated: 0
-    deprecationMessage: 
-    isDiscoverable: 1
-  isDeprecated: 0
-  deprecationMessage: 
-  git:
-    hash: 
-    revision: 
-  upmReserved: 
-  assetStore:
-    productId: 
-  fingerprint: d97b7cd61dedd05f0fbaa425a40bd39d098f5cfc
-  editorCompatibility:
-    compatibilityLevel: 0
-    minimumPackageVersion: 1.6.0
-    minimumUnityVersion: 6000.0.44f1
   compliance:
     status: 0
     violation:
@@ -6148,86 +6411,6 @@ m_ResolvedPackages:
     compatibilityLevel: 0
     minimumPackageVersion: 2.1.0
     minimumUnityVersion: 2022.3.0a1
-  compliance:
-    status: 0
-    violation:
-      scopePatternExpression: 
-      message: 
-      readMoreLink: 
-- packageId: com.unity.ext.nunit@2.0.5
-  testable: 0
-  isDirectDependency: 0
-  version: 2.0.5
-  source: 2
-  resolvedPath: C:\Users\paula\Desktop\Code\Unity Projects\Unity-Shooter\Library\PackageCache\com.unity.ext.nunit@031a54704bff
-  assetPath: Packages/com.unity.ext.nunit
-  name: com.unity.ext.nunit
-  displayName: Custom NUnit
-  author:
-    name: 
-    email: 
-    url: 
-  category: Libraries
-  type: 
-  description: A custom version of NUnit used by Unity Test Framework. Based on NUnit
-    version 3.5 and works with all platforms, il2cpp and Mono AOT.
-  errors: []
-  versions:
-    all:
-    - 2.0.5
-    compatible:
-    - 2.0.5
-    recommended: 2.0.5
-    deprecated: []
-  dependencies: []
-  resolvedDependencies: []
-  keywords:
-  - nunit
-  - unittest
-  - test
-  registry:
-    id: main
-    name: 
-    url: https://packages.unity.com
-    scopes: []
-    isDefault: 1
-    capabilities: 7
-    configSource: 0
-    compliance:
-      status: 0
-      violations: []
-  hideInEditor: 1
-  entitlements:
-    licensingModel: 0
-  isAssetStorePackage: 0
-  datePublishedTicks: 0
-  documentationUrl: https://docs.unity3d.com/Packages/com.unity.ext.nunit@2.0/manual/index.html
-  hasRepository: 0
-  repository:
-    type: 
-    url: 
-    revision: 
-    path: 
-  unityLifecycle:
-    version: 2.0.5
-    nextVersion: 
-    recommendedVersion: 
-    isDeprecated: 0
-    deprecationMessage: 
-    isDiscoverable: 0
-  isDeprecated: 0
-  deprecationMessage: 
-  git:
-    hash: 
-    revision: 
-  upmReserved: 
-  assetStore:
-    productId: 
-  fingerprint: 031a54704bffe39e6a0324909f8eaa4565bdebf2
-  editorCompatibility:
-    compatibilityLevel: 0
-    minimumPackageVersion: 2.0.5
-    minimumUnityVersion: 2019.4.0a1
   compliance:
     status: 0
     violation:
