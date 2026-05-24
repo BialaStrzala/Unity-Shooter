@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9145014715710812454}
   - component: {fileID: 23636602935991812}
+  - component: {fileID: 8881508172299924395}
   m_Layer: 0
   m_Name: Shotgun
   m_TagString: Untagged
@@ -69,6 +70,29 @@ MonoBehaviour:
   muzzleFlash: {fileID: 5802697842012774323}
   environmentHitEffect: {fileID: 923361415246287586, guid: 2d40fd90023957a4b9897584c9392368, type: 3}
   playerHitEffect: {fileID: 5077819531597492689, guid: 53d3a294da189da45a667bf35a759f63, type: 3}
+  gunAnimator: {fileID: 8881508172299924395}
+--- !u!95 &8881508172299924395
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1401311744176065050}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b868938a40c1cf04a8290bbdf2fbf3ea, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1742563711945863833
 GameObject:
   m_ObjectHideFlags: 0
@@ -1223,6 +1247,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 847d603838aa33347a37d27ef6b2b187, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2702986837560467081}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 847d603838aa33347a37d27ef6b2b187, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6409729235020142408}
   m_SourcePrefab: {fileID: 100100000, guid: 847d603838aa33347a37d27ef6b2b187, type: 3}
 --- !u!1 &1179425564036041661 stripped
 GameObject:
@@ -1262,6 +1289,29 @@ MonoBehaviour:
   muzzleFlash: {fileID: 9183756041262964565}
   environmentHitEffect: {fileID: 923361415246287586, guid: 2d40fd90023957a4b9897584c9392368, type: 3}
   playerHitEffect: {fileID: 5077819531597492689, guid: 53d3a294da189da45a667bf35a759f63, type: 3}
+  gunAnimator: {fileID: 6409729235020142408}
+--- !u!95 &6409729235020142408
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179425564036041661}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7a7baff935a98474baeaf5442631341a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &1951740761214177543 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 847d603838aa33347a37d27ef6b2b187, type: 3}

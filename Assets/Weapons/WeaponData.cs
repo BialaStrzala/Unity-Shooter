@@ -5,6 +5,7 @@ public class WeaponData : ScriptableObject
 {
     public string weaponName;
     public GameObject modelPrefab;
+    public RuntimeAnimatorController animatorController;
     public float fireRate = 0.2f;
     public float range = 20f;
     public int damage = 10;

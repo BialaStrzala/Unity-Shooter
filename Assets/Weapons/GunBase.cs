@@ -1,5 +1,6 @@
 using PurrNet;
 using UnityEngine;
+using System.Collections; // ДОБАВЛЕНО: Нужно для корутины (IEnumerator)
 
 public class GunBase : NetworkBehaviour
 {
@@ -12,11 +13,14 @@ public class GunBase : NetworkBehaviour
     [SerializeField] private ParticleSystem muzzleFlash;
     [SerializeField] private ParticleSystem environmentHitEffect;
     [SerializeField] private ParticleSystem playerHitEffect;
+    [SerializeField] private Animator gunAnimator;
 
     private void Update()
     {
         SetIKTargets();
+        
         if(!isOwner){return;} //not owner
+        
         if(Input.GetKeyDown(KeyCode.Mouse0))
         {
             Shoot();
@@ -26,6 +30,11 @@ public class GunBase : NetworkBehaviour
     public void SetData(WeaponData newData)
     {
         data = newData;
+        
+        if (gunAnimator != null && data.animatorController != null)
+        {
+            gunAnimator.runtimeAnimatorController = data.animatorController;
+        }
     }
 
     private void Shoot()
@@ -38,6 +47,8 @@ public class GunBase : NetworkBehaviour
 
         //animation
         PlayShotEffect();
+        
+        PlayLocalAnimation();
 
         //didn't hit anything
         if(!Physics.Raycast(cameraTransform.position, cameraTransform.forward,out var hit, data.range, hitLayer))
@@ -60,6 +71,28 @@ public class GunBase : NetworkBehaviour
         }
     }
 
+    private void PlayLocalAnimation()
+    {
+        if (gunAnimator != null && gunAnimator.gameObject.activeInHierarchy)
+        {
+            // ИЗМЕНЕНО: Теперь скрипт вызывает универсальное имя "Shoot"
+            gunAnimator.Play("Shoot", 0, 0f);
+            StopAllCoroutines(); 
+            StartCoroutine(ReturnToIdleAfterShot());
+        }
+    }
+
+    // Таймер возврата в состояние покоя
+    private IEnumerator ReturnToIdleAfterShot()
+    {
+        yield return new WaitForSeconds(0.15f); // Длина отдачи
+        if (gunAnimator != null && gunAnimator.gameObject.activeInHierarchy)
+        {
+            // ИЗМЕНЕНО: Теперь скрипт вызывает универсальное имя "Idle"
+            gunAnimator.Play("Idle", 0, 0f);
+        }
+    }
+
     [ObserversRpc(runLocally:true)]
     private void PlayShotEffect()
     {
@@ -73,11 +106,11 @@ public class GunBase : NetworkBehaviour
     private void PlayEnvironmentHitEffect(Vector3 position, Vector3 normal)
     {
         if(environmentHitEffect)
-            {
-                var effect = Instantiate(environmentHitEffect, position, Quaternion.LookRotation(normal));
-                effect.Play();
-                //Destroy(effect.gameObject, 2f);
-            }
+        {
+            var effect = Instantiate(environmentHitEffect, position, Quaternion.LookRotation(normal));
+            effect.Play();
+            //Destroy(effect.gameObject, 2f);
+        }
     }
 
     [ObserversRpc(runLocally:true)]
@@ -93,6 +126,9 @@ public class GunBase : NetworkBehaviour
 
     private void SetIKTargets()
     {
+        // Защита от NullReferenceException, если IK не назначен
+        if (rightHandTarget == null || leftHandTarget == null || rightIKTarget == null || leftIKTarget == null) return;
+        
         rightIKTarget.SetPositionAndRotation(rightHandTarget.position, rightHandTarget.rotation);
         leftIKTarget.SetPositionAndRotation(leftHandTarget.position, leftHandTarget.rotation);
     }

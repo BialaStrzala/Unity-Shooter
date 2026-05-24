@@ -89,6 +89,14 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 183
   data: {fileID: 11400000, guid: 15f3e54d32844c04ea90dceb5f2521de, type: 2}
+  rightHandTarget: {fileID: 0}
+  leftHandTarget: {fileID: 0}
+  rightIKTarget: {fileID: 0}
+  leftIKTarget: {fileID: 0}
+  muzzleFlash: {fileID: 0}
+  environmentHitEffect: {fileID: 0}
+  playerHitEffect: {fileID: 0}
+  gunAnimator: {fileID: 0}
 --- !u!1 &3344912294720958483
 GameObject:
   m_ObjectHideFlags: 0
@@ -99,6 +107,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3806911546251652034}
   - component: {fileID: 817388629978668719}
+  - component: {fileID: 4472823417443418071}
   m_Layer: 0
   m_Name: RiflePrefab
   m_TagString: Untagged
@@ -150,6 +159,36 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 183
   data: {fileID: 11400000, guid: 15f3e54d32844c04ea90dceb5f2521de, type: 2}
+  rightHandTarget: {fileID: 0}
+  leftHandTarget: {fileID: 0}
+  rightIKTarget: {fileID: 0}
+  leftIKTarget: {fileID: 0}
+  muzzleFlash: {fileID: 0}
+  environmentHitEffect: {fileID: 0}
+  playerHitEffect: {fileID: 0}
+  gunAnimator: {fileID: 4472823417443418071}
+--- !u!95 &4472823417443418071
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3344912294720958483}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a8ba61d8ab780ec49992d82b82b90293, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6309649598291459944
 GameObject:
   m_ObjectHideFlags: 0
