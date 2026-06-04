@@ -9,6 +9,7 @@ public class WaitForPlayersState : StateNode
     public override void Enter(bool asServer)
     {
         base.Enter(asServer);
+        Debug.Log("Entering wait for players state as " + (asServer ? "server" : "client"));
         if (!asServer) { return; }
 
         Debug.Log("Entered WaitForPlayersState");

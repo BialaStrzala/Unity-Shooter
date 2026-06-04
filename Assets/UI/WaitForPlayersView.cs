@@ -14,7 +14,7 @@ public class WaitForPlayersView : View
 
     public void OnDestroy()
     {
-        InstanceHandler.UnregisterInstance<EndGameView>();
+        InstanceHandler.UnregisterInstance<WaitForPlayersView>();
     }
 
     public void SetWaitingText(int currentPlayers, int requiredPlayers)
@@ -24,7 +24,7 @@ public class WaitForPlayersView : View
 
     public override void OnShow()
     {
-        
+        Debug.Log("Show wait for players view");
     }
 
     public override void OnHide()

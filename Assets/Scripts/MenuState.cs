@@ -14,6 +14,8 @@ public class MenuState : StateNode
     {
         base.Enter(asServer);
         menuCamera.gameObject.SetActive(true);
+        if (InstanceHandler.TryGetInstance(out GameViewManager gameViewManager))
+            gameViewManager.ShowView<MenuView>();
 
         if (asServer)
         {
@@ -55,7 +57,7 @@ public class MenuState : StateNode
             Debug.Log("[MenuState] All players ready — moving to next state");
 
             if (InstanceHandler.TryGetInstance(out GameViewManager gameViewManager))
-                gameViewManager.ShowView<MainGameView>();
+                gameViewManager.ShowView<MainGameView>(true);
 
             machine.Next();
         }

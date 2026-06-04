@@ -672,7 +672,7 @@ MonoBehaviour:
   standHeight: 1.5
   crouchSpeed: 4
   crouchTransitionSpeed: 10
-  lookSensitivity: 2
+  lookSensitivity: 3
   maxLookAngle: 80
   playerBody: {fileID: 6642144023677599897}
   playerCamera: {fileID: 1727965345486233359}

@@ -7,6 +7,8 @@ using System.Linq;
 public class GameEndState : StateNode
 {
     [SerializeField] public Camera menuCamera;
+    [SerializeField] private StateNode menuState;
+    private WaitForSeconds delay = new(5f);
     public override void Enter(bool asServer)
     {
         base.Enter(asServer);
@@ -41,6 +43,10 @@ public class GameEndState : StateNode
         endGameView.SetWinner(winner);
         gameViewManager.ShowView<EndGameView>(true);
         //Debug.Log($"Game has ended with {winner} as the winner");
+        if(asServer)
+        {
+            StartCoroutine(BackToMenu());
+        }
     }
 
     private void DespawnPlayers()
@@ -49,6 +55,21 @@ public class GameEndState : StateNode
         foreach(var player in allPlayers)
         {
             Destroy(player.gameObject);
+        }
+    }
+
+    private IEnumerator<WaitForSeconds> BackToMenu()
+    {
+        yield return delay;
+        machine.SetState(menuState);
+    }
+
+    public override void Exit(bool asServer)
+    {
+        base.Exit(asServer);
+        if (InstanceHandler.TryGetInstance(out GameViewManager gameViewManager))
+        {
+            gameViewManager.HideView<EndGameView>();
         }
     }
 }

@@ -10,8 +10,8 @@ public class MainGameView : View
     [SerializeField] private RectTransform healthBar;
     public float width, height, maxHealth;
     [Header("Damage Flash")]
-    [SerializeField] private Image damageBorder;
-    [SerializeField] private float flashDuration = 0.2f;
+    [SerializeField] private Image damageOverlay;
+    [SerializeField] private float flashDuration = 0.5f;
     private Coroutine flashRoutine;
 
     private void Awake()
@@ -43,6 +43,7 @@ public class MainGameView : View
 
     public void DamageFlash()
     {
+        Debug.Log("Damage flash called");
         if(flashRoutine != null)
         {
             StopCoroutine(flashRoutine);
@@ -53,26 +54,24 @@ public class MainGameView : View
 
     private IEnumerator DamageFlashRoutine()
     {
-        damageBorder.gameObject.SetActive(true);
-
-        Color color = damageBorder.color;
-        color.a = 1f;
-        damageBorder.color = color;
-
+        Debug.Log("Damage flash");
+        damageOverlay.gameObject.SetActive(true);
+        Color color = damageOverlay.color;
+        color.a = 0.2f;
+        damageOverlay.color = color;
         float timer = 0f;
 
-        while(timer < flashDuration)
+        while (timer < flashDuration)
         {
             timer += Time.deltaTime;
-
-            float alpha = Mathf.Lerp(1f, 0f, timer / flashDuration);
-
-            color.a = alpha;
-            damageBorder.color = color;
-
+            color.a = Mathf.Lerp(0.2f, 0f, timer / flashDuration);
+            damageOverlay.color = color;
             yield return null;
         }
 
-        damageBorder.gameObject.SetActive(false);
+        color.a = 0f;
+        damageOverlay.color = color;
+        damageOverlay.gameObject.SetActive(false);
+        flashRoutine = null;
     }
 }
