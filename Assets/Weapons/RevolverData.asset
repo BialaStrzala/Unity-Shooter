@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d493a5e7e575f4d44b220ce2c31874b8, type: 3}
-  m_Name: PistolData
+  m_Name: RevolverData
   m_EditorClassIdentifier: Assembly-CSharp::WeaponData
   weaponName: Pistol
   modelPrefab: {fileID: 1829057068892873038, guid: 860a5a8d653ff5646bfbeb8ea1cc2fcc, type: 3}
   animatorController: {fileID: 0}
-  animDuration: 0.3
-  fireRate: 0.3
-  range: 20
-  damage: 20
-  reloadTime: 1.5
+  animDuration: 0.5
+  fireRate: 0.5
+  range: 40
+  damage: 30
+  reloadTime: 3
   bullets: 20

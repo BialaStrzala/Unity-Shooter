@@ -22,13 +22,27 @@ public class PlayerWeapon : NetworkBehaviour
         base.OnDestroy();
         activeWeaponIndex.onChanged -= OnWeaponChanged;
     }
+
     private void Update()
     {
-        if(!isOwner){return;}
-        //temp
-        if(Input.GetKeyDown(KeyCode.Alpha1)) {
-            EquipWeapon(0);}
-        if(Input.GetKeyDown(KeyCode.Alpha2)) {EquipWeapon(1);}
+        if (!isOwner) return; 
+
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            EquipWeapon(0); 
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            EquipWeapon(1);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            EquipWeapon(2);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            EquipWeapon(3);
+        }
     }
 
     private void EquipWeapon(int index)

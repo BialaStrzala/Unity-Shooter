@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WeaponData
   weaponName: Rifle
   modelPrefab: {fileID: 3344912294720958483, guid: df956e004c574bb4cb06c2d94bfd79be, type: 3}
+  animatorController: {fileID: 0}
+  animDuration: 1
   fireRate: 1
   range: 20
   damage: 50

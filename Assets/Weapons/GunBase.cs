@@ -75,7 +75,13 @@ public class GunBase : NetworkBehaviour
     {
         if (gunAnimator != null && gunAnimator.gameObject.activeInHierarchy)
         {
-            // ИЗМЕНЕНО: Теперь скрипт вызывает универсальное имя "Shoot"
+            // Узнаем, какой контроллер сейчас реально вставлен в пушку
+            string controllerName = gunAnimator.runtimeAnimatorController != null 
+                ? gunAnimator.runtimeAnimatorController.name 
+                : "ПУСТО (NULL)";
+                
+            Debug.Log($"[ОТЛАДКА] Дробовик стреляет! Текущий контроллер: {controllerName}");
+
             gunAnimator.Play("Shoot", 0, 0f);
             StopAllCoroutines(); 
             StartCoroutine(ReturnToIdleAfterShot());
@@ -85,10 +91,12 @@ public class GunBase : NetworkBehaviour
     // Таймер возврата в состояние покоя
     private IEnumerator ReturnToIdleAfterShot()
     {
-        yield return new WaitForSeconds(0.15f); // Длина отдачи
+        float waitTime = data != null ? data.animDuration : 0.15f;
+        Debug.Log($"[ТАЙМЕР] Жду {waitTime} секунд перед возвратом в Idle...");
+        yield return new WaitForSeconds(waitTime); 
+        
         if (gunAnimator != null && gunAnimator.gameObject.activeInHierarchy)
         {
-            // ИЗМЕНЕНО: Теперь скрипт вызывает универсальное имя "Idle"
             gunAnimator.Play("Idle", 0, 0f);
         }
     }
