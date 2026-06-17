@@ -12,4 +12,5 @@ public class WeaponData : ScriptableObject
     public int damage = 10;
     public float reloadTime = 1.5f;
     public int bullets;
+    public bool isAutomatic;
 }

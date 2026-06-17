@@ -21,7 +21,11 @@ public class GunBase : NetworkBehaviour
         
         if(!isOwner){return;} //not owner
         
-        if(Input.GetKeyDown(KeyCode.Mouse0))
+        bool wantsToFire = data != null && data.isAutomatic 
+            ? Input.GetKey(KeyCode.Mouse0) 
+            : Input.GetKeyDown(KeyCode.Mouse0);
+            
+        if(wantsToFire)
         {
             Shoot();
         }

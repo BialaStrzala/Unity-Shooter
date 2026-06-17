@@ -21,3 +21,4 @@ MonoBehaviour:
   damage: 10
   reloadTime: 3
   bullets: 1
+  isAutomatic: 1
